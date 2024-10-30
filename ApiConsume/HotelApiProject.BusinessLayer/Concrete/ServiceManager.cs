@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _ServiceDAL = ServiceDAL;
         }
 
-        public void TDelete(Service t)
+        public void TDelete(int id)
         {
-            _ServiceDAL.Delete(t);
+            _ServiceDAL.Delete(id);
         }
 
         public Service TGetById(int id)

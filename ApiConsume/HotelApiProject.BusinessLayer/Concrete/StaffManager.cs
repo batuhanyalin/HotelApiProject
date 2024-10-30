@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _StaffDAL = StaffDAL;
         }
 
-        public void TDelete(Staff t)
+        public void TDelete(int id)
         {
-            _StaffDAL.Delete(t);
+            _StaffDAL.Delete(id);
         }
 
         public Staff TGetById(int id)

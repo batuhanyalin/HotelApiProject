@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelApiProject.BusinessLayer.Abstract;
+using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebApi.Controllers
@@ -7,29 +9,41 @@ namespace HotelApiProject.WebApi.Controllers
     [ApiController]
     public class SubscribeController : ControllerBase
     {
+        private readonly ISubscribeService _SubscribeService;
+
+        public SubscribeController(ISubscribeService SubscribeService)
+        {
+            _SubscribeService = SubscribeService;
+        }
+
         [HttpGet]
         public IActionResult ListSubscribe()
         {
-            return Ok();
+            var value = _SubscribeService.TGetList();
+            return Ok(value);
         }
         [HttpGet("{id}")]
-        public IActionResult GetSubscribe()
+        public IActionResult GetSubscribe(int id)
         {
-            return Ok();
+            var value = _SubscribeService.TGetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddSubscribe()
+        public IActionResult AddSubscribe(Subscribe Subscribe)
         {
+            _SubscribeService.TInsert(Subscribe);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteSubscribe()
+        public IActionResult DeleteSubscribe(int id)
         {
+            _SubscribeService.TDelete(id);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateSubscribe()
+        public IActionResult UpdateSubscribe(Subscribe Subscribe)
         {
+            _SubscribeService.TUpdate(Subscribe);
             return Ok();
         }
     }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelApiProject.BusinessLayer.Abstract;
+using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebApi.Controllers
@@ -7,29 +9,41 @@ namespace HotelApiProject.WebApi.Controllers
     [ApiController]
     public class ServiceController : ControllerBase
     {
+        private readonly IServiceService _ServiceService;
+
+        public ServiceController(IServiceService ServiceService)
+        {
+            _ServiceService = ServiceService;
+        }
+
         [HttpGet]
         public IActionResult ListService()
         {
-            return Ok();
+            var value = _ServiceService.TGetList();
+            return Ok(value);
         }
         [HttpGet("{id}")]
-        public IActionResult GetService()
+        public IActionResult GetService(int id)
         {
-            return Ok();
+            var value = _ServiceService.TGetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddService()
+        public IActionResult AddService(Service Service)
         {
+            _ServiceService.TInsert(Service);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteService()
+        public IActionResult DeleteService(int id)
         {
+            _ServiceService.TDelete(id);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateService()
+        public IActionResult UpdateService(Service Service)
         {
+            _ServiceService.TUpdate(Service);
             return Ok();
         }
     }

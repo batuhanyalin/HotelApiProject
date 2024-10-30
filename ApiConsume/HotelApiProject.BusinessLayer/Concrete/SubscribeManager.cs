@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _SubscribeDAL = SubscribeDAL;
         }
 
-        public void TDelete(Subscribe t)
+        public void TDelete(int id)
         {
-            _SubscribeDAL.Delete(t);
+            _SubscribeDAL.Delete(id);
         }
 
         public Subscribe TGetById(int id)

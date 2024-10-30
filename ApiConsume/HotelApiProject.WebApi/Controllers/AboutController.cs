@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelApiProject.BusinessLayer.Abstract;
+using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebApi.Controllers
@@ -7,29 +9,41 @@ namespace HotelApiProject.WebApi.Controllers
     [ApiController]
     public class AboutController : ControllerBase
     {
+        private readonly IAboutService _AboutService;
+
+        public AboutController(IAboutService AboutService)
+        {
+            _AboutService = AboutService;
+        }
+
         [HttpGet]
         public IActionResult ListAbout()
         {
-            return Ok();
+            var value = _AboutService.TGetList();
+            return Ok(value);
         }
         [HttpGet("{id}")]
-        public IActionResult GetAbout()
+        public IActionResult GetAbout(int id)
         {
-            return Ok();
+            var value = _AboutService.TGetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddAbout()
+        public IActionResult AddAbout(About About)
         {
+            _AboutService.TInsert(About);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteAbout()
+        public IActionResult DeleteAbout(int id)
         {
+            _AboutService.TDelete(id);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateAbout()
+        public IActionResult UpdateAbout(About About)
         {
+            _AboutService.TUpdate(About);
             return Ok();
         }
     }

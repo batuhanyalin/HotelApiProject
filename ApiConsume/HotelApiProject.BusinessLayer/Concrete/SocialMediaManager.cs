@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _SocialMediaDAL = SocialMediaDAL;
         }
 
-        public void TDelete(SocialMedia t)
+        public void TDelete(int id)
         {
-            _SocialMediaDAL.Delete(t);
+            _SocialMediaDAL.Delete(id);
         }
 
         public SocialMedia TGetById(int id)

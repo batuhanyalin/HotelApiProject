@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _RoomDAL = RoomDAL;
         }
 
-        public void TDelete(Room t)
+        public void TDelete(int id)
         {
-            _RoomDAL.Delete(t);
+            _RoomDAL.Delete(id);
         }
 
         public Room TGetById(int id)

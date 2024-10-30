@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _TestimonialDAL = TestimonialDAL;
         }
 
-        public void TDelete(Testimonial t)
+        public void TDelete(int id)
         {
-            _TestimonialDAL.Delete(t);
+            _TestimonialDAL.Delete(id);
         }
 
         public Testimonial TGetById(int id)

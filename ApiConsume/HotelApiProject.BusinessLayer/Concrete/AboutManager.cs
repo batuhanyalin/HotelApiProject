@@ -18,9 +18,9 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _aboutDAL = aboutDAL;
         }
 
-        public void TDelete(About t)
+        public void TDelete(int id)
         {
-            _aboutDAL.Delete(t);
+            _aboutDAL.Delete(id);
         }
 
         public About TGetById(int id)

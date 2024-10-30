@@ -10,7 +10,7 @@ namespace HotelApiProject.BusinessLayer.Abstract
     {
         void TInsert(T t);
         void TUpdate(T t);
-        void TDelete(T t);
+        void TDelete(int id);
         T TGetById(int id);
         List<T> TGetList();
     }

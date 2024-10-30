@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelApiProject.BusinessLayer.Abstract;
+using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebApi.Controllers
@@ -7,29 +9,41 @@ namespace HotelApiProject.WebApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
+        private readonly IContactService _ContactService;
+
+        public ContactController(IContactService ContactService)
+        {
+            _ContactService = ContactService;
+        }
+
         [HttpGet]
         public IActionResult ListContact()
         {
-            return Ok();
+            var value = _ContactService.TGetList();
+            return Ok(value);
         }
         [HttpGet("{id}")]
-        public IActionResult GetContact()
+        public IActionResult GetContact(int id)
         {
-            return Ok();
+            var value = _ContactService.TGetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddContact()
+        public IActionResult AddContact(Contact Contact)
         {
+            _ContactService.TInsert(Contact);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteContact()
+        public IActionResult DeleteContact(int id)
         {
+            _ContactService.TDelete(id);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateContact()
+        public IActionResult UpdateContact(Contact Contact)
         {
+            _ContactService.TUpdate(Contact);
             return Ok();
         }
     }

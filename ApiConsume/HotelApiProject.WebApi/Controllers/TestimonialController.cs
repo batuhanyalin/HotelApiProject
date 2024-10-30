@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelApiProject.BusinessLayer.Abstract;
+using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebApi.Controllers
@@ -7,29 +9,41 @@ namespace HotelApiProject.WebApi.Controllers
     [ApiController]
     public class TestimonialController : ControllerBase
     {
+        private readonly ITestimonialService _TestimonialService;
+
+        public TestimonialController(ITestimonialService TestimonialService)
+        {
+            _TestimonialService = TestimonialService;
+        }
+
         [HttpGet]
         public IActionResult ListTestimonial()
         {
-            return Ok();
+            var value = _TestimonialService.TGetList();
+            return Ok(value);
         }
         [HttpGet("{id}")]
-        public IActionResult GetTestimonial()
+        public IActionResult GetTestimonial(int id)
         {
-            return Ok();
+            var value = _TestimonialService.TGetById(id);
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddTestimonial()
+        public IActionResult AddTestimonial(Testimonial Testimonial)
         {
+            _TestimonialService.TInsert(Testimonial);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteTestimonial()
+        public IActionResult DeleteTestimonial(int id)
         {
+            _TestimonialService.TDelete(id);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateTestimonial()
+        public IActionResult UpdateTestimonial(Testimonial Testimonial)
         {
+            _TestimonialService.TUpdate(Testimonial);
             return Ok();
         }
     }
