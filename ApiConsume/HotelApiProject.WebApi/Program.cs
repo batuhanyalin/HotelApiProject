@@ -11,22 +11,24 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IAboutService, AboutManager>();
-builder.Services.AddScoped<IAboutDAL, EFAboutDAL>();
-builder.Services.AddScoped<IContactService, ContactManager>();
-builder.Services.AddScoped<IContactDAL, EFContactDAL>();
-builder.Services.AddScoped<IRoomService, RoomManager>();
-builder.Services.AddScoped<IRoomDAL, EFRoomDAL>();
-builder.Services.AddScoped<IServiceService, ServiceManager>();
-builder.Services.AddScoped<IServiceDAL, EFServiceDAL>();
-builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
-builder.Services.AddScoped<ISocialMediaDAL, EFSocialMediaDAL>();
-builder.Services.AddScoped<IStaffService, StaffManager>();
-builder.Services.AddScoped<IStaffDAL, EFStaffDAL>();
-builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
-builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
-builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
-builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
+
+//builder.Services.AddScoped<IAboutService, AboutManager>();
+//builder.Services.AddScoped<IAboutDAL, EFAboutDAL>();
+//builder.Services.AddScoped<IContactService, ContactManager>();
+//builder.Services.AddScoped<IContactDAL, EFContactDAL>();
+//builder.Services.AddScoped<IRoomService, RoomManager>();
+//builder.Services.AddScoped<IRoomDAL, EFRoomDAL>();
+//builder.Services.AddScoped<IServiceService, ServiceManager>();
+//builder.Services.AddScoped<IServiceDAL, EFServiceDAL>();
+//builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+//builder.Services.AddScoped<ISocialMediaDAL, EFSocialMediaDAL>();
+//builder.Services.AddScoped<IStaffService, StaffManager>();
+//builder.Services.AddScoped<IStaffDAL, EFStaffDAL>();
+//builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
+//builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
+//builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+//builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
+
 
 var app = builder.Build();
 
