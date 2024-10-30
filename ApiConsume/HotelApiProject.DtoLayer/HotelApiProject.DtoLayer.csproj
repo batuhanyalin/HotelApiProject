@@ -23,4 +23,8 @@
     <ProjectReference Include="..\HotelApiProject.EntityLayer\HotelApiProject.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

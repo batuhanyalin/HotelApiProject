@@ -24,4 +24,8 @@
     <ProjectReference Include="..\..\ApiConsume\HotelApiProject.WebApi\HotelApiProject.WebApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\staff\" />
+  </ItemGroup>
+
 </Project>

@@ -30,6 +30,14 @@ builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
 
+//API' a eriþim izni veriyoruz.
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("HotelApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -40,6 +48,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("HotelApiCors"); //Yukarýda tanýmlanan Corsu buraya ekliyoruz.
 app.UseAuthorization();
 
 app.MapControllers();
