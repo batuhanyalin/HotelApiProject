@@ -6,37 +6,40 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebUI.Controllers
 {
-    public class RegisterController : Controller
+    public class LoginController : Controller
     {
-        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly IMapper _mapper;
-
-        public RegisterController(UserManager<AppUser> userManager, IMapper mapper)
+        public LoginController(SignInManager<AppUser> signInManager, IMapper mapper)
         {
-            _userManager = userManager;
+            _signInManager = signInManager;
             _mapper = mapper;
         }
-
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(RegisterDto dto)
+        public async Task<IActionResult> Index(LoginDto dto)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
             var map = _mapper.Map<AppUser>(dto);
-            var result = await _userManager.CreateAsync(map, dto.Password);
+
+            var result = await _signInManager.PasswordSignInAsync(dto.UserName, dto.Password, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Dashboard");
             }
-            
             return View();
+        }
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index");
         }
     }
 }

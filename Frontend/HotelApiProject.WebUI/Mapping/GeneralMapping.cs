@@ -8,6 +8,7 @@ using HotelApiProject.DtoLayer.Dtos.StaffDtos;
 using HotelApiProject.DtoLayer.Dtos.SubscribeDtos;
 using HotelApiProject.DtoLayer.Dtos.TestimonialDtos;
 using HotelApiProject.EntityLayer.Concrete;
+using HotelApiProject.WebUI.Dtos.AppUserDtos;
 
 namespace HotelApiProject.WebUI.Mapping
 {
@@ -43,6 +44,9 @@ namespace HotelApiProject.WebUI.Mapping
             CreateMap<Testimonial, TestimonialUpdateDto>().ReverseMap();
 
             CreateMap<Contact, ContactListDto>().ReverseMap();
+
+            CreateMap<AppUser, RegisterDto>().ReverseMap();
+            CreateMap<AppUser, LoginDto>().ReverseMap();
         }
     }
 }
