@@ -3,6 +3,7 @@ using HotelApiProject.BusinessLayer.Concrete;
 using HotelApiProject.DataAccessLayer.Abstract;
 using HotelApiProject.DataAccessLayer.Concrete;
 using HotelApiProject.DataAccessLayer.EntityFramework;
+using HotelApiProject.WebApi.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,9 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
+builder.Services.AddAutoMapper(typeof(Program)); //Automapper
+
+//builder.Services.AddScoped<>
 
 //API' a eriþim izni veriyoruz.
 builder.Services.AddCors(opt =>
