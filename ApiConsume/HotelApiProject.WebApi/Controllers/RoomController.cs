@@ -25,9 +25,8 @@ namespace HotelApiProject.WebApi.Controllers
         [HttpGet]
         public IActionResult ListRoom()
         {
-            var value = _RoomService.TGetList();
-            var map = _mapper.Map<List<RoomListDto>>(value);
-            return Ok(map);
+            var value = _RoomService.TGetList();         
+            return Ok(value);
         }
         [HttpGet("{id}")]
         public IActionResult GetRoom(int id)

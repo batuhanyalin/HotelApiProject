@@ -9,6 +9,6 @@ namespace HotelApiProject.DtoLayer.Dtos.SubscribeDtos
     public class SubscribeUpdateDto
     {
         public int SubscribeId { get; set; }
-        public string Mail { get; set; }
+        public string Email { get; set; }
     }
 }

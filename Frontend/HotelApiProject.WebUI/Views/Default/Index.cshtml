@@ -3,6 +3,8 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
+@await Component.InvokeAsync("_UILayoutSliderComponentPartial")
+@await Component.InvokeAsync("_UILayoutBookingComponentPartial")
 <!-- About Start -->
 @await Component.InvokeAsync("_DefaultAboutUsComponentPartial")
 <!-- About End -->
