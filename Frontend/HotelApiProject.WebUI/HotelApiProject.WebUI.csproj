@@ -33,4 +33,21 @@
     <Folder Include="wwwroot\images\staff\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\hotel-html-template\lib\counterup\counterup.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\easing\easing.js" />
+    <None Include="wwwroot\hotel-html-template\lib\easing\easing.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\owlcarousel\LICENSE" />
+    <None Include="wwwroot\hotel-html-template\lib\owlcarousel\owl.carousel.js" />
+    <None Include="wwwroot\hotel-html-template\lib\owlcarousel\owl.carousel.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\tempusdominus\js\moment-timezone.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\tempusdominus\js\moment.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <None Include="wwwroot\hotel-html-template\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\waypoints\links.php" />
+    <None Include="wwwroot\hotel-html-template\lib\waypoints\waypoints.min.js" />
+    <None Include="wwwroot\hotel-html-template\lib\wow\wow.js" />
+    <None Include="wwwroot\hotel-html-template\lib\wow\wow.min.js" />
+  </ItemGroup>
+
 </Project>
