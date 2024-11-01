@@ -24,6 +24,10 @@ namespace HotelApiProject.WebUI.Controllers
         {
             return View();
         }
+        public IActionResult error404()
+        {
+            return View();
+        }
         public async Task<IActionResult> Staff()
         {
             var client = _httpClientFactory.CreateClient();
