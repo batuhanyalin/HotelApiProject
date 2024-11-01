@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace HotelApiProject.WebUI.Controllers
+namespace HotelApiProject.WebUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/[controller]")]
     public class TestimonialController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory; //API Consume için gerekli istemci sınıfı
@@ -13,6 +15,7 @@ namespace HotelApiProject.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -26,12 +29,14 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("AddTestimonial")]
         public IActionResult AddTestimonial()
         {
 
             return View();
         }
         [HttpPost]
+        [Route("AddTestimonial")]
         public async Task<IActionResult> AddTestimonial(AddTestimonialViewModel model, IFormFile Image)
         {
             if (Image != null && Image.Length > 0)
@@ -62,6 +67,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("UpdateTestimonial/{id:int}")]
         public async Task<IActionResult> UpdateTestimonial(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -76,6 +82,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpPost]
+        [Route("UpdateTestimonial")]
         public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialViewModel model, IFormFile Image)
         {
 
@@ -107,6 +114,7 @@ namespace HotelApiProject.WebUI.Controllers
             }
             return View();
         }
+        [Route("DeleteTestimonial/{id:int}")]
         public async Task<IActionResult> DeleteTestimonial(int id)
         {
             var client = _httpClientFactory.CreateClient();

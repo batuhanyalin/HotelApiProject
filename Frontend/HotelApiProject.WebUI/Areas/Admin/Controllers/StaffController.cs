@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace HotelApiProject.WebUI.Controllers
+namespace HotelApiProject.WebUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/[controller]")]
     public class StaffController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory; //API Consume için gerekli istemci sınıfı
@@ -13,7 +15,7 @@ namespace HotelApiProject.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -27,12 +29,14 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("AddStaff")]
         public IActionResult AddStaff()
         {
 
             return View();
         }
         [HttpPost]
+        [Route("AddStaff")]
         public async Task<IActionResult> AddStaff(AddStaffViewModel model, IFormFile Image)
         {
             if (Image != null && Image.Length > 0)
@@ -67,6 +71,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("UpdateStaff/{id:int}")]
         public async Task<IActionResult> UpdateStaff(int id)
         {
             var client= _httpClientFactory.CreateClient();
@@ -81,6 +86,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpPost]
+        [Route("UpdateStaff")]
         public async Task<IActionResult> UpdateStaff(UpdateStaffViewModel model, IFormFile Image)
         {
 
@@ -116,6 +122,7 @@ namespace HotelApiProject.WebUI.Controllers
             }
             return View();
         }
+        [Route("DeleteStaff/{id:int}")]
         public async Task<IActionResult> DeleteStaff(int id)
         {
             var client = _httpClientFactory.CreateClient();

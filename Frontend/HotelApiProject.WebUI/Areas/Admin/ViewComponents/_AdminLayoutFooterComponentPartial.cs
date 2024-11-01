@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HotelApiProject.WebUI.ViewComponents
+namespace HotelApiProject.WebUI.Areas.Admin.ViewComponents
 {
-    public class _AdminLayoutNavbarComponentPartial : ViewComponent
+    public class _AdminLayoutFooterComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

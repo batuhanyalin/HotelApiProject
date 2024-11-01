@@ -2,7 +2,7 @@
 
 namespace HotelApiProject.WebUI.ViewComponents
 {
-    public class _AdminLayoutScriptsComponentPartial : ViewComponent
+    public class _UILayoutNavbarSocialMediaComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

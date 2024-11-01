@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace HotelApiProject.WebUI.Controllers
+namespace HotelApiProject.WebUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/[controller]")]
     public class ServiceController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory; //API Consume için gerekli istemci sınıfı
@@ -13,7 +15,7 @@ namespace HotelApiProject.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -27,12 +29,14 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("AddService")]
         public IActionResult AddService()
         {
 
             return View();
         }
         [HttpPost]
+        [Route("AddService")]
         public async Task<IActionResult> AddService(ServiceAddDto model)
         {
             if (!ModelState.IsValid)
@@ -50,6 +54,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpGet]
+        [Route("UpdateService/{id:int}")]
         public async Task<IActionResult> UpdateService(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -64,6 +69,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpPost]
+        [Route("UpdateService")]
         public async Task<IActionResult> UpdateService(ServiceUpdateDto model)
         {
             if (!ModelState.IsValid)
@@ -80,6 +86,7 @@ namespace HotelApiProject.WebUI.Controllers
             }
             return View();
         }
+        [Route("DeleteService/{id:int}")]
         public async Task<IActionResult> DeleteService(int id)
         {
             var client = _httpClientFactory.CreateClient();
