@@ -53,6 +53,7 @@ namespace HotelApiProject.WebUI.Mapping
 
             CreateMap<Reservation, ReservationAddDto>().ReverseMap();
             CreateMap<Reservation, ReservationListDto>().ReverseMap();
+            CreateMap<Reservation, ReservationUpdateDto>().ReverseMap();
         }
     }
 }
