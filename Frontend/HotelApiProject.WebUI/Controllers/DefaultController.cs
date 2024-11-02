@@ -2,6 +2,7 @@
 using HotelApiProject.EntityLayer.Concrete;
 using HotelApiProject.WebUI.Dtos.RoomDtos;
 using HotelApiProject.WebUI.Dtos.StaffDtos;
+using HotelApiProject.WebUI.Dtos.SubscribeDtos;
 using HotelApiProject.WebUI.Models.Testimonial;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -71,6 +72,29 @@ namespace HotelApiProject.WebUI.Controllers
         public IActionResult RoomDetail()
         {
             return View();
+        }
+        [HttpGet]
+        public PartialViewResult _SubscribePartial()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public async Task<PartialViewResult> _SubscribePartial(CreateSubscibeDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return PartialView("Index",dto);
+            }
+            var client = _httpClientFactory.CreateClient();
+            var map = _mapper.Map<Subscribe>(dto);
+            var jsonData = JsonConvert.SerializeObject(map);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:5173/api/Subscribe", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return PartialView("Index");
+            }
+            return PartialView();
         }
     }
 }

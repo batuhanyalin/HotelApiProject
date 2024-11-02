@@ -33,6 +33,7 @@ namespace HotelApiProject.WebUI.Mapping
 
             CreateMap<Subscribe, SubscribeListDto>().ReverseMap();
             CreateMap<Subscribe, SubscribeUpdateDto>().ReverseMap();
+            CreateMap<Subscribe, CreateSubscibeDto>().ReverseMap();
 
             CreateMap<SocialMedia, SocialMediaAddDto>().ReverseMap();
             CreateMap<SocialMedia, SocialMediaListDto>().ReverseMap();
