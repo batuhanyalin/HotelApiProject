@@ -13,13 +13,14 @@ using HotelApiProject.WebUI.Dtos.ReservationDtos;
 
 namespace HotelApiProject.WebUI.Mapping
 {
-    public class GeneralMapping:Profile
+    public class GeneralMapping : Profile
     {
         public GeneralMapping()
         {
-            CreateMap<Room,RoomAddDto>().ReverseMap();
-            CreateMap<Room,RoomUpdateDto>().ReverseMap();
-            CreateMap<Room,RoomListDto>().ReverseMap();
+            CreateMap<Room, RoomListDto>().ReverseMap();
+            CreateMap<Room, RoomAddDto>().ReverseMap();
+            CreateMap<Room, RoomUpdateDto>().ReverseMap();
+
 
             CreateMap<About, AboutUpdateDto>().ReverseMap();
             CreateMap<About, AboutListDto>().ReverseMap();
@@ -34,7 +35,7 @@ namespace HotelApiProject.WebUI.Mapping
 
             CreateMap<Subscribe, SubscribeListDto>().ReverseMap();
             CreateMap<Subscribe, SubscribeUpdateDto>().ReverseMap();
-            CreateMap<Subscribe, CreateSubscibeDto>().ReverseMap();
+
 
             CreateMap<SocialMedia, SocialMediaAddDto>().ReverseMap();
             CreateMap<SocialMedia, SocialMediaListDto>().ReverseMap();

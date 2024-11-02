@@ -2,9 +2,9 @@
 
 namespace HotelApiProject.WebUI.Dtos.SubscribeDtos
 {
-    public class CreateSubscibeDto
+    public class SubscribeAddDto
     {
-        [Required(ErrorMessage ="E-posta bilgisi boş geçilemez.")]
+        [Required(ErrorMessage ="E-posta bilgisi boş bırakılamaz.")]
         public string Email { get; set; }
     }
 }

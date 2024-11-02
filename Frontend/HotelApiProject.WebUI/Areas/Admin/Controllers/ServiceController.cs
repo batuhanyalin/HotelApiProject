@@ -65,7 +65,6 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
                 var value = JsonConvert.DeserializeObject<ServiceUpdateDto>(jsonData);
                 return View(value);
             }
-
             return View();
         }
         [HttpPost]

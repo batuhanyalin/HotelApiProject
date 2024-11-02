@@ -74,7 +74,7 @@ namespace HotelApiProject.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> _SubscribePartial(CreateSubscibeDto dto)
+        public async Task<IActionResult> _SubscribePartial(SubscribeAddDto dto)
         {
             if (!ModelState.IsValid)
             {
