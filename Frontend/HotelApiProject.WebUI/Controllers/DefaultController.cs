@@ -73,17 +73,12 @@ namespace HotelApiProject.WebUI.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public PartialViewResult _SubscribePartial()
-        {
-            return PartialView();
-        }
         [HttpPost]
-        public async Task<PartialViewResult> _SubscribePartial(CreateSubscibeDto dto)
+        public async Task<IActionResult> _SubscribePartial(CreateSubscibeDto dto)
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("Index",dto);
+                return View("Index",dto);
             }
             var client = _httpClientFactory.CreateClient();
             var map = _mapper.Map<Subscribe>(dto);
@@ -92,9 +87,9 @@ namespace HotelApiProject.WebUI.Controllers
             var responseMessage = await client.PostAsync("http://localhost:5173/api/Subscribe", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return PartialView("Index");
+                return RedirectToAction("Index");
             }
-            return PartialView();
+            return View("Index",dto);
         }
     }
 }

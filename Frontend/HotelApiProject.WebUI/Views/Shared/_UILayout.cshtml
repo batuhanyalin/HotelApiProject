@@ -21,7 +21,7 @@
         <!-- Booking End -->
         @RenderBody()
         <!-- Newsletter Start -->
-        @await Html.PartialAsync("_SubscribePartial")
+        @await Component.InvokeAsync("_UILayoutSubscribeComponentPartial")
         <!-- Newsletter Start -->
         <!-- Footer Start -->
         @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
