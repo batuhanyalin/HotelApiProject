@@ -34,7 +34,7 @@ namespace HotelApiProject.WebApi.Controllers
             _ContactService.TInsert(Contact);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteContact(int id)
         {
             _ContactService.TDelete(id);

@@ -30,6 +30,11 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
+builder.Services.AddScoped<IReservationService, ReservationManager>();
+builder.Services.AddScoped<IReservationDAL, EFReservationDAL>();
+
+
+
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 
 //builder.Services.AddScoped<>

@@ -4,22 +4,23 @@
 
 namespace HotelApiProject.DataAccessLayer.Migrations
 {
-    public partial class mig7 : Migration
+    public partial class mig8 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Mail",
-                table: "Subscribes",
-                newName: "Email");
+            migrationBuilder.AddColumn<string>(
+                name: "Email",
+                table: "Reservations",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
+            migrationBuilder.DropColumn(
                 name: "Email",
-                table: "Subscribes",
-                newName: "Mail");
+                table: "Reservations");
         }
     }
 }

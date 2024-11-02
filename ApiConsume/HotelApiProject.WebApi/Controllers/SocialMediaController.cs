@@ -34,7 +34,7 @@ namespace HotelApiProject.WebApi.Controllers
             _SocialMediaService.TInsert(SocialMedia);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteSocialMedia(int id)
         {
             _SocialMediaService.TDelete(id);

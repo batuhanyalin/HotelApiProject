@@ -45,7 +45,7 @@ namespace HotelApiProject.WebApi.Controllers
             _RoomService.TInsert(map);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteRoom(int id)
         {
             _RoomService.TDelete(id);

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelApiProject.BusinessLayer.Abstract
+namespace HotelApiProject.DataAccessLayer.Abstract
 {
-    public interface IReservationService:IGenericService<Reservation>
+    public interface IReservationDAL:IGenericDAL<Reservation>
     {
     }
 }
