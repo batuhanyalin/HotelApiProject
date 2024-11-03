@@ -13,8 +13,6 @@ namespace HotelApiProject.WebUI.Dtos.RoomDtos
 
         [Required(ErrorMessage = "Oda numarası boş bırakılamaz.")]
         public string RoomNumber { get; set; }
-
-        [Required(ErrorMessage = "Oda görsel bilgisi boş bırakılamaz.")]
         public string CoverImageUrl { get; set; }
 
         [Required(ErrorMessage = "Fiyat bilgisi boş bırakılamaz.")]

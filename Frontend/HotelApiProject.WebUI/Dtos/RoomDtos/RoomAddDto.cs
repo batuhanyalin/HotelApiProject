@@ -9,7 +9,7 @@ namespace HotelApiProject.WebUI.Dtos.RoomDtos
 {
     public class RoomAddDto
     {
-        [Required(ErrorMessage ="Oda numarası boş bırakılamaz.")]
+        [Required(ErrorMessage = "Oda numarası boş bırakılamaz.")]
         public string RoomNumber { get; set; }
         public string CoverImageUrl { get; set; }
         [Required(ErrorMessage = "Fiyat bilgisi boş bırakılamaz.")]
@@ -22,5 +22,6 @@ namespace HotelApiProject.WebUI.Dtos.RoomDtos
         public int BathCount { get; set; }
         public bool Wifi { get; set; }
         public string Description { get; set; }
+        public IFormFile Image { get; set; }
     }
 }
