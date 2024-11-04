@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApiJwt.Models;
 
@@ -12,6 +13,13 @@ namespace WebApiJwt.Controllers
         public IActionResult Test()
         {
             return Ok(new CreateToken().TokenCreate());
+        }
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpGet("[action]")]
+        public IActionResult Test2()
+        {
+            return Ok("Hoşgeldiniz");
+
         }
     }
 }
