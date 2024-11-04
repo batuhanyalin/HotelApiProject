@@ -10,16 +10,27 @@ namespace WebApiJwt.Controllers
     public class DefaultController : ControllerBase
     {
         [HttpGet("[action]")]
-        public IActionResult Test()
+        public IActionResult GenerateToken()
         {
             return Ok(new CreateToken().TokenCreate());
         }
+        [HttpGet("[action]")]
+        public IActionResult GenerateAuthorizeToken()
+        {
+            return Ok(new CreateToken().TokenCreateAuthorize());
+        }
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("[action]")]
-        public IActionResult Test2()
+        public IActionResult TestToken()
         {
             return Ok("Hoşgeldiniz");
-
         }
+        [Authorize(AuthenticationSchemes = "Bearer",Roles ="Admin,Visitor")] //Burada rol belirtiyoruz.
+        [HttpGet("[action]")]
+        public IActionResult TestTokenByAuthentication()
+        {
+            return Ok("Hoşgeldiniz");
+        }
+
     }
 }
