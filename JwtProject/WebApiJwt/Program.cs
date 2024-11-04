@@ -18,8 +18,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     {
         ValidIssuer = "http://localhost", //Kim yayýnlýyor
         ValidAudience = "http://localhost", //Kim dinliyor
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapi")), //Jwtden gelen imzayý belirliyor, burada key belirlemiþ oluyoruz.
-        ValidateIssuerSigningKey = true
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapibatuhanyalin.com")), //Jwtden gelen imzayý belirliyor, burada key belirlemiþ oluyoruz.
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true
     };
 });
 
