@@ -10,6 +10,7 @@ using HotelApiProject.WebUI.Dtos.SubscribeDtos;
 using HotelApiProject.WebUI.Dtos.RoomDtos;
 using HotelApiProject.WebUI.Dtos.ContactDtos;
 using HotelApiProject.WebUI.Dtos.ReservationDtos;
+using HotelApiProject.WebUI.Dtos.GuestDtos;
 
 namespace HotelApiProject.WebUI.Mapping
 {
@@ -20,6 +21,10 @@ namespace HotelApiProject.WebUI.Mapping
             CreateMap<Room, RoomListDto>().ReverseMap();
             CreateMap<Room, RoomAddDto>().ReverseMap();
             CreateMap<Room, RoomUpdateDto>().ReverseMap();
+
+            CreateMap<Guest, GuestUpdateDto>().ReverseMap();
+            CreateMap<Guest, GuestListDto>().ReverseMap();
+            CreateMap<Guest, GuestAddDto>().ReverseMap();
 
 
             CreateMap<About, AboutUpdateDto>().ReverseMap();

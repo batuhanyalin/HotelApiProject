@@ -32,6 +32,8 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
 builder.Services.AddScoped<IReservationService, ReservationManager>();
 builder.Services.AddScoped<IReservationDAL, EFReservationDAL>();
+builder.Services.AddScoped<IGuestService, GuestManager>();
+builder.Services.AddScoped<IGuestDAL, EFGuestDAL>();
 
 
 
