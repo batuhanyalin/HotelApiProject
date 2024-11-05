@@ -35,6 +35,9 @@ builder.Services.AddScoped<IReservationDAL, EFReservationDAL>();
 builder.Services.AddScoped<IGuestService, GuestManager>();
 builder.Services.AddScoped<IGuestDAL, EFGuestDAL>();
 
+builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
+builder.Services.AddScoped<ISendMessageDAL, EFSendMessageDAL>();
+
 
 
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper

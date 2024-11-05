@@ -26,5 +26,6 @@ namespace HotelApiProject.DataAccessLayer.Concrete
         public DbSet<ReservationStatus> ReservationStatuses { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Guest> Guests { get; set; }
+        public DbSet<SendMessage> SendMessages { get; set; }
     }
 }
