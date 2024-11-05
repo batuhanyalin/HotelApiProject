@@ -2,10 +2,10 @@
 {
     public class GuestAddDto
     {
-        public string TC { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime Birthday { get; set; }
-        public string City { get; set; }
+        public string? TC { get; set; }
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
+        public DateTime? Birthday { get; set; }
+        public string? City { get; set; }
     }
 }

@@ -39,19 +39,23 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         [Route("AddGuest")]
         public async Task<IActionResult> AddGuest(GuestAddDto model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(model);
+                StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json"); //İçeriği dönüştürmek için kullanıyoruz.
+                var responseMessage = await client.PostAsync("http://localhost:5173/api/Guest", stringContent);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            else
             {
                 return View();
             }
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(model);
-            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json"); //İçeriği dönüştürmek için kullanıyoruz.
-            var responseMessage = await client.PostAsync("http://localhost:5173/api/Guest", stringContent);
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                return RedirectToAction("Index");
-            }
-            return View();
+
         }
         [HttpGet]
         [Route("UpdateGuest/{id:int}")]
@@ -68,22 +72,25 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        [Route("UpdateGuest")]
+        [Route("UpdateGuest/{id:int}")]
         public async Task<IActionResult> UpdateGuest(GuestUpdateDto model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(model);
+                StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json"); //İçeriği dönüştürmek için kullanıyoruz.
+                var responseMessage = await client.PutAsync("http://localhost:5173/api/Guest", stringContent);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            else
             {
                 return View();
             }
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(model);
-            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json"); //İçeriği dönüştürmek için kullanıyoruz.
-            var responseMessage = await client.PutAsync("http://localhost:5173/api/Guest", stringContent);
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                return RedirectToAction("Index");
-            }
-            return View();
         }
         [Route("DeleteGuest/{id:int}")]
         public async Task<IActionResult> DeleteGuest(int id)
