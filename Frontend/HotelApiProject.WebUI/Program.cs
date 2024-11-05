@@ -4,12 +4,20 @@ using HotelApiProject.DataAccessLayer.Concrete;
 using HotelApiProject.EntityLayer.Concrete;
 using HotelApiProject.WebUI.Dtos.GuestDtos;
 using HotelApiProject.WebUI.ValidationRules.GuestValidationRules;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<IValidator<GuestAddDto>,GuestCreateValidator>(); // Burada fluentValidator ile validator sýnýfý eþleniyor.
-builder.Services.AddControllersWithViews().AddFluentValidation(); //FluentValidation ekleniyor
+
+//** FLUENT VALIDATON **
+//Burada validation .net 6.0 a uygun bir yöntemle dahil ediliyor.
+builder.Services.AddFluentValidationAutoValidation(); 
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+//*** FLUENT VALIDATON **
+
+builder.Services.AddControllersWithViews(); //FluentValidation ekleniyor
 builder.Services.AddHttpClient();//Client Cors için dependency injection
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDbContext<Context>();
