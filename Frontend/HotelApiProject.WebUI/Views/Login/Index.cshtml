@@ -14,7 +14,7 @@
     <title>HotelApi - Hesabınıza Giriş Yapın</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="~/adminweb/images/favicon.png">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="~/adminweb/css/style.css" rel="stylesheet">
 
 </head>
@@ -46,8 +46,21 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index.html"> <h4>Hesabınıza Giriş Yapın</h4></a>
+                                <div>
+                                    <div style="text-align:center" class="row">
+                                        <div class="col">
+                                            <a style="color:white;font-size:larger" class="badge bg-primary" href="/Default/Index"><i class="fas fa-home"></i> Siteye Dön</a>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div style ="text-align:center" class="row">
+                                        <div class="col">
+                                            <h4>Hesabınıza Giriş Yapın</h4>
+                                        </div>
 
+                                    </div>
+                                </div>
+                                <hr />
                                 <form method="post" class="mt-5 mb-5 login-input">
                                     <div class="form-group">
                                         <input type="text" class="form-control" asp-for="UserName" placeholder="Kullanıcı Adı">

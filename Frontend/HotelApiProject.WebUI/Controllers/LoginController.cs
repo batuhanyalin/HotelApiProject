@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using HotelApiProject.EntityLayer.Concrete;
 using HotelApiProject.WebUI.Dtos.AppUserDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelApiProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
@@ -32,7 +34,7 @@ namespace HotelApiProject.WebUI.Controllers
             var result = await _signInManager.PasswordSignInAsync(dto.UserName, dto.Password, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
             }
             return View();
         }

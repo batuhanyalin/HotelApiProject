@@ -4,6 +4,7 @@ using HotelApiProject.WebUI.Dtos.RoomDtos;
 using HotelApiProject.WebUI.Dtos.StaffDtos;
 using HotelApiProject.WebUI.Dtos.SubscribeDtos;
 using HotelApiProject.WebUI.Models.Testimonial;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -11,6 +12,7 @@ using System.Text;
 
 namespace HotelApiProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
