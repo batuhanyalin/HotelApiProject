@@ -65,7 +65,13 @@
                                     <span class="text-danger" asp-validation-for="Email"></span>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    @Html.DropDownListFor(x => x.MessageCategoryId, (List<SelectListItem>)ViewBag.contactCategory, new { @class = "form-control" })
+                                    <label>Kategori Seçin</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" asp-for="Subject" placeholder="Konu">
                                     <label>Konu</label>
