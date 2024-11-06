@@ -1,5 +1,6 @@
 ﻿using HotelApiProject.WebUI.Dtos.ContactDtos;
 using HotelApiProject.WebUI.Dtos.SendMessageDtos;
+using HotelApiProject.WebUI.Models.Contact;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
@@ -42,23 +43,6 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
                 return View(values);
             }
             return View();
-        }
-        public async Task<PartialViewResult> SideBarContactPartial()
-        {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5173/api/Contact");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ContactListDto>>(jsonData);
-                ViewBag.InboxCount = values.Count();
-                var responseMessage2 = await client.GetAsync("http://localhost:5173/api/SendMessage");
-                var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
-                var values2 = JsonConvert.DeserializeObject<List<SendMessageListDto>>(jsonData2);
-                ViewBag.SentBoxCount = values2.Count();
-                return PartialView();
-            }
-            return PartialView();
         }
         public PartialViewResult SideBarContactCategoryPartial()
         {
@@ -117,7 +101,7 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var vales = JsonConvert.DeserializeObject<ContactListDto>(jsonData);
 
-                vales.IsApproved=true;
+                vales.IsApproved = true;
                 var jsonData2 = JsonConvert.SerializeObject(vales);
                 StringContent stringContent2 = new StringContent(jsonData2, Encoding.UTF8, "application/json"); //İçeriği dönüştürmek için kullanıyoruz.
                 var responseMessage2 = await client.PutAsync("http://localhost:5173/api/Contact", stringContent2);

@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="email-left-box">
                         <a href="/Admin/Contact/AddSendMessage" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
-                        @await Html.PartialAsync("SideBarContactPartial")
+                        @await Component.InvokeAsync("_MessageSideBarComponentPartial")
                         @await Html.PartialAsync("SideBarContactCategoryPartial")
                     </div>
                     <div class="email-right-box">

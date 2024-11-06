@@ -28,6 +28,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
             return _ContactDAL.GetById(id);
         }
 
+        public int TGetContactCount()
+        {
+            return _ContactDAL.GetContactCount();
+        }
+
         public List<Contact> TGetList()
         {
            return _ContactDAL.GetList();

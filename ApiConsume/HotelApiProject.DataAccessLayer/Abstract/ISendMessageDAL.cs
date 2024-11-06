@@ -9,5 +9,6 @@ namespace HotelApiProject.DataAccessLayer.Abstract
 {
     public interface ISendMessageDAL:IGenericDAL<SendMessage>
     {
+        public int GetSendboxCount();
     }
 }

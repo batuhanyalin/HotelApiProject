@@ -46,5 +46,12 @@ namespace HotelApiProject.WebApi.Controllers
             _SendMessageService.TUpdate(SendMessage);
             return Ok();
         }
+
+        [HttpGet("GetSendBoxCount")]
+        public IActionResult GetSendBoxCount()
+        {
+
+            return Ok(_SendMessageService.TGetSendboxCount());
+        }
     }
 }

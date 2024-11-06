@@ -46,5 +46,12 @@ namespace HotelApiProject.WebApi.Controllers
             _ContactService.TUpdate(Contact);
             return Ok();
         }
+        [HttpGet("[action]")]
+        public IActionResult GetContactCount()
+        {
+            int count = _ContactService.TGetContactCount();
+            return Ok(count);
+        }
     }
 }
+

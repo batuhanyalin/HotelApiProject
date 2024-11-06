@@ -18,5 +18,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
         {
             _context = context;
         }
+        public int GetSendboxCount()
+        {
+            int count = _context.SendMessages.Count();
+            return count;
+        }
     }
 }
