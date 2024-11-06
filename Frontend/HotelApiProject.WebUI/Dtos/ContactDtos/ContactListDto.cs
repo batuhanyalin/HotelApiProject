@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelApiProject.EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace HotelApiProject.WebUI.Dtos.ContactDtos
         public string Subject { get; set; }
         public string Text { get; set; }
         public DateTime SendingDate { get; set; }
+        public int MessageCategoryId { get; set; }
+        public MessageCategory MessageCategory { get; set; }
         public bool IsApproved { get; set; }
     }
 }

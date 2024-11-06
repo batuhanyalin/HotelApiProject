@@ -24,7 +24,7 @@
                     <div class="email-left-box">
                         <a href="/Admin/Contact/AddSendMessage" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
                         @await Component.InvokeAsync("_MessageSideBarComponentPartial")
-                        @await Html.PartialAsync("SideBarContactCategoryPartial")
+                        @await Component.InvokeAsync("_MessageSideBarCategoryComponentPartial")
                     </div>
                     <div class="email-right-box">
                         <div role="toolbar" class="toolbar">

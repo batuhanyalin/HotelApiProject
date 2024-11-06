@@ -1,4 +1,6 @@
-﻿using HotelApiProject.WebUI.Dtos.ContactDtos;
+﻿using AutoMapper;
+using HotelApiProject.EntityLayer.Concrete;
+using HotelApiProject.WebUI.Dtos.ContactDtos;
 using HotelApiProject.WebUI.Dtos.SendMessageDtos;
 using HotelApiProject.WebUI.Models.Contact;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +14,11 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
     public class ContactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory; //API Consume için gerekli istemci sınıfı
-
-        public ContactController(IHttpClientFactory httpClientFactory)
+        private readonly IMapper _mapper;
+        public ContactController(IHttpClientFactory httpClientFactory, IMapper mapper)
         {
             _httpClientFactory = httpClientFactory;
+            _mapper = mapper;
         }
         [Route("SentMessageList")]
         public async Task<IActionResult> SentMessageList()
@@ -35,18 +38,15 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5173/api/Contact");
+            var responseMessage = await client.GetAsync("http://localhost:5173/api/Contact/GetListContact");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ContactListDto>>(jsonData);
-                return View(values);
+                var values = JsonConvert.DeserializeObject<List<Contact>>(jsonData);
+                var map= _mapper.Map<List<ContactListDto>>(values);
+                return View(map);
             }
             return View();
-        }
-        public PartialViewResult SideBarContactCategoryPartial()
-        {
-            return PartialView();
         }
         [HttpGet]
         [Route("AddSendMessage")]

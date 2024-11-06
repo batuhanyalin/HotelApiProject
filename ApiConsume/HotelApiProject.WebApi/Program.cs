@@ -38,11 +38,15 @@ builder.Services.AddScoped<IGuestDAL, EFGuestDAL>();
 builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
 builder.Services.AddScoped<ISendMessageDAL, EFSendMessageDAL>();
 
-
+builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
+builder.Services.AddScoped<IMessageCategoryDAL, EFMessageCategoryDAL>();
 
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 
-//builder.Services.AddScoped<>
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+});
 
 //API' a eriþim izni veriyoruz.
 builder.Services.AddCors(opt =>

@@ -23,7 +23,7 @@
                     <div class="email-left-box">
                         <a href="/Admin/Contact/AddSendMessage" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
                         @await Component.InvokeAsync("_MessageSideBarComponentPartial")
-                        @await Html.PartialAsync("SideBarContactCategoryPartial")
+                        @await Component.InvokeAsync("_MessageSideBarCategoryComponentPartial")
                     </div>
                     <div class="email-right-box">
                         <div role="toolbar" class="toolbar">
@@ -41,6 +41,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Kategori</th>
                                             <th>Gönderici Adı</th>
                                             <th>Gönderici Soyadı</th>
                                             <th>Konu</th>
@@ -56,6 +57,7 @@
                                             count++;
                                             <tr>
                                                 <td>@count</td>
+                                                <td><i class="@item.MessageCategory.IconUrl"></i> @item.MessageCategory.MessageCategoryName</td>
                                                 <td>@item.Name</td>
                                                 <td>@item.Surname</td>
                                                 <td>@item.Subject</td>

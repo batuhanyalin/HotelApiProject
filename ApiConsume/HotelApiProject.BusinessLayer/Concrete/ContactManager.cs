@@ -38,6 +38,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
            return _ContactDAL.GetList();
         }
 
+        public List<Contact> TGetListContact()
+        {
+           return _ContactDAL.GetListContact(); 
+        }
+
         public void TInsert(Contact t)
         {
             _ContactDAL.Insert(t);

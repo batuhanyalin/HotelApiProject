@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelApiProject.BusinessLayer.Abstract
 {
-    public interface IContactService:IGenericService<Contact>
+    public interface IMessageCategoryService:IGenericService<MessageCategory>
     {
-        public int TGetContactCount();
-        public List<Contact> TGetListContact();
     }
 }

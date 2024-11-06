@@ -16,6 +16,8 @@ namespace HotelApiProject.EntityLayer.Concrete
         public string Subject { get; set; }
         public string Text { get; set; }
         public DateTime SendingDate { get; set; }
+        public int MessageCategoryId { get; set; }
+        public MessageCategory MessageCategory { get; set; }
         public bool IsApproved { get; set; }
     }
 }

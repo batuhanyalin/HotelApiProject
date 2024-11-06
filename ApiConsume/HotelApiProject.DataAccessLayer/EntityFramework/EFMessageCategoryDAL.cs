@@ -2,7 +2,6 @@
 using HotelApiProject.DataAccessLayer.Concrete;
 using HotelApiProject.DataAccessLayer.Repositories;
 using HotelApiProject.EntityLayer.Concrete;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +10,13 @@ using System.Threading.Tasks;
 
 namespace HotelApiProject.DataAccessLayer.EntityFramework
 {
-    public class EFContactDAL : GenericRepository<Contact>, IContactDAL
+    public class EFMessageCategoryDAL : GenericRepository<MessageCategory>, IMessageCategoryDAL
     {
         private readonly Context _context;
 
-        public EFContactDAL(Context context) : base(context)
+        public EFMessageCategoryDAL(Context context) : base(context)
         {
             _context = context;
-        }
-        public int GetContactCount()
-        {
-            int count = _context.Contacts.Count();
-            return count;
-        }
-        public List<Contact> GetListContact()
-        {
-            var values= _context.Contacts.Include(x=>x.MessageCategory).ToList();
-            return values;
         }
     }
 }

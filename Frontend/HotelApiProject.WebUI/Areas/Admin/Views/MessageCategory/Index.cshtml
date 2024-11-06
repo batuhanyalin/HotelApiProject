@@ -1,33 +1,34 @@
-﻿@model List<GuestListDto>
+﻿@model List<MessageCategoryListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
 
+
 <div class="row page-titles mx-0">
     <div class="col p-md-0">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Admin/Dashboard/Index">Anasayfa</a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)">Misafirler</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Mesaj Kategorileri</a></li>
         </ol>
     </div>
 </div>
 <!-- row -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-8">
                             <h4 class="card-title">
-                                Misafir Listesi
+                                Mesaj Kategori Listesi
                             </h4>
                         </div>
                         <div class="col-lg-2">
-                            <a href="/Admin/Guest/AddGuest" class="btn mb-1 btn-primary">
-                                Yeni Misafir  <span class="btn-icon-right"><i class="fas fa-user-plus"></i></span>
+                            <a href="/Admin/MessageCategory/AddMessageCategory" class="btn mb-1 btn-primary">
+                                Yeni Mesaj Kategori  <span class="btn-icon-right"><i class="fas fa-stream"> +</i></span>
                             </a>
                         </div>
                     </div>
@@ -36,11 +37,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">TC</th>
-                                    <th scope="col">Ad</th>
-                                    <th scope="col">Soyad</th>
-                                    <th scope="col">Şehir</th>
-                                    <th scope="col">Doğum Tarihi</th>
+                                    <th scope="col">İkon</th>
+                                    <th scope="col">Kategori Adı</th>
                                     <th scope="col">Aksiyon</th>
                                 </tr>
                             </thead>
@@ -50,13 +48,10 @@
                                     count++;
                                     <tr>
                                         <th>@count</th>
-                                        <td>@item.TC</td>
-                                        <td>@item.Name</td>
-                                        <td>@item.Surname</td>               
-                                        <td>@item.City</td>               
-                                        <td>@item.Birthday.ToString("dd.MM.yyy")</td>               
+                                        <th><i class="@item.IconUrl"></i></th>
+                                        <td>@item.MessageCategoryName</td>
                                         <td>
-                                            <span><a href="/Admin/Guest/UpdateGuest/@item.GuestId" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/Admin/Guest/DeleteGuest/@item.GuestId" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
+                                            <span><a href="/Admin/MessageCategory/UpdateMessageCategory/@item.MessageCategoryId" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/Admin/MessageCategory/DeleteMessageCategory/@item.MessageCategoryId" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
                                         </td>
                                     </tr>
                                 }
