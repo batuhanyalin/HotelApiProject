@@ -20,6 +20,10 @@ namespace HotelApiProject.WebUI.Mapping
         public GeneralMapping()
         {
 
+            CreateMap<AppUser, UserListDto>().ReverseMap();
+            CreateMap<AppUser, UserAddDto>().ReverseMap();
+            CreateMap<AppUser, UserUpdateDto>().ReverseMap();
+
             CreateMap<MessageCategory, MessageCategoryListDto>().ReverseMap();
             CreateMap<MessageCategory, MessageCategoryUpdateDto>().ReverseMap();
             CreateMap<MessageCategory, MessageCategoryAddDto>().ReverseMap();

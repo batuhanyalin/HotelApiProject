@@ -32,12 +32,14 @@ namespace HotelApiProject.WebUI.Controllers
                 return View();
             }
             var map = _mapper.Map<AppUser>(dto);
+            map.ImageUrl = $"/images/users/no-image-user.png";
+            map.RegisterDate= DateTime.Now;
             var result = await _userManager.CreateAsync(map, dto.Password);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Login");
             }
-            
+
             return View();
         }
     }
