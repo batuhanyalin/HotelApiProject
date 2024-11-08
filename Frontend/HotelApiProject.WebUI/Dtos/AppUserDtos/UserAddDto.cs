@@ -1,4 +1,6 @@
-﻿namespace HotelApiProject.WebUI.Dtos.AppUserDtos
+﻿using HotelApiProject.EntityLayer.Concrete;
+
+namespace HotelApiProject.WebUI.Dtos.AppUserDtos
 {
     public class UserAddDto
     {
@@ -14,6 +16,8 @@
         public string ImageUrl { get; set; }
         public string? InstagramUrl { get; set; }
         public string? TwitterUrl { get; set; }
+        public int WorkLocationId { get; set; }
+        public WorkLocation WorkLocation { get; set; }
         public DateTime Birtday { get; set; }
         public DateTime RegisterDate { get; set; }
         public IFormFile Image { get; set; }

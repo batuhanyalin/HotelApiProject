@@ -11,6 +11,6 @@ namespace HotelApiProject.EntityLayer.Concrete
         public int MessageCategoryId { get; set; }
         public string MessageCategoryName { get; set; }
         public string IconUrl { get; set; }
-        public List<Contact> Contacts { get; set; }
+        public List<Contact>? Contacts { get; set; }
     }
 }

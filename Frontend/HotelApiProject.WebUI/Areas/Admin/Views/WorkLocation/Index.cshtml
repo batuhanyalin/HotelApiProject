@@ -1,34 +1,33 @@
-﻿@model List<UserListDto>
+﻿@model List<WorkLocationListDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
 
-
 <div class="row page-titles mx-0">
     <div class="col p-md-0">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/Admin/Dashboard/Index">Anasayfa</a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)">Kullanıcılar</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Şubeler</a></li>
         </ol>
     </div>
 </div>
 <!-- row -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-8">
                             <h4 class="card-title">
-                                Kullanıcı Listesi
+                                Şube Listesi
                             </h4>
                         </div>
                         <div class="col-lg-2">
-                            <a href="/Admin/User/AddUser" class="btn mb-1 btn-primary">
-                                Yeni Kullanıcı <span class="btn-icon-right"><i class="fas fa-user-plus"></i></span>
+                            <a href="/Admin/WorkLocation/AddWorkLocation" class="btn mb-1 btn-primary">
+                                Yeni Şube  <span class="btn-icon-right"><i class="fas fa-hotel"> +</i></span>
                             </a>
                         </div>
                     </div>
@@ -37,13 +36,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Profil</th>
-                                    <th scope="col">Adı</th>
-                                    <th scope="col">Soyadı</th>
-                                    <th scope="col">Meslek</th>
+                                    <th scope="col">Şube Adı</th>
                                     <th scope="col">Şehir</th>
-                                    <th scope="col">Bulunduğu Şube</th>
-                                    <th scope="col">E-posta</th>
                                     <th scope="col">Aksiyon</th>
                                 </tr>
                             </thead>
@@ -53,15 +47,10 @@
                                     count++;
                                     <tr>
                                         <th>@count</th>
-                                        <th><img height="90px" width="80px" src="@item.ImageUrl" /></th>
-                                        <td>@item.Name</td>
-                                        <td>@item.Surname</td>
-                                        <td>@item.Profession</td>
-                                        <td>@item.City</td>
-                                        <td>@item.WorkLocation.WorkLocationName - @item.WorkLocation.WorkLocationCity</td>
-                                        <td>@item.Email</td>
+                                        <td>@item.WorkLocationName</td>
+                                        <td>@item.WorkLocationCity</td>
                                         <td>
-                                            <span><a href="/Admin/User/UpdateUser/@item.Id" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/Admin/User/DeleteUser/@item.Id" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
+                                            <span><a href="/Admin/WorkLocation/UpdateWorkLocation/@item.WorkLocationId" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/Admin/WorkLocation/DeleteWorkLocation/@item.WorkLocationId" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
                                         </td>
                                     </tr>
                                 }

@@ -33,7 +33,8 @@ namespace HotelApiProject.WebUI.Controllers
             }
             var map = _mapper.Map<AppUser>(dto);
             map.ImageUrl = $"/images/users/no-image-user.png";
-            map.RegisterDate= DateTime.Now;
+            map.RegisterDate = DateTime.Now;
+            map.WorkLocationId = 1;
             var result = await _userManager.CreateAsync(map, dto.Password);
             if (result.Succeeded)
             {

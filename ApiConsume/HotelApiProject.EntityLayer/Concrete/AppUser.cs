@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelApiProject.EntityLayer.Concrete
 {
-    public class AppUser:IdentityUser<int>
+    public class AppUser : IdentityUser<int>
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -19,5 +19,7 @@ namespace HotelApiProject.EntityLayer.Concrete
         public string? TwitterUrl { get; set; }
         public DateTime Birtday { get; set; }
         public DateTime RegisterDate { get; set; }
+        public int WorkLocationId { get; set; }
+        public WorkLocation WorkLocation { get; set; }
     }
 }

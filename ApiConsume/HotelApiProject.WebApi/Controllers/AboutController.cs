@@ -34,7 +34,7 @@ namespace HotelApiProject.WebApi.Controllers
             _AboutService.TInsert(About);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id)
         {
             _AboutService.TDelete(id);

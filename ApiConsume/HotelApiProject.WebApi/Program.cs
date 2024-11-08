@@ -41,6 +41,9 @@ builder.Services.AddScoped<ISendMessageDAL, EFSendMessageDAL>();
 builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
 builder.Services.AddScoped<IMessageCategoryDAL, EFMessageCategoryDAL>();
 
+builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
+builder.Services.AddScoped<IWorkLocationDAL, EFWorkLocationDAL>();
+
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 
 builder.Services.AddControllers().AddJsonOptions(options =>

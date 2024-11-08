@@ -3,6 +3,7 @@ using HotelApiProject.EntityLayer.Concrete;
 using HotelApiProject.WebUI.Dtos.AppUserDtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Text;
@@ -14,24 +15,37 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMapper _mapper;
-        public UserController(UserManager<AppUser> userManager, IMapper mapper)
+        public UserController(UserManager<AppUser> userManager, IMapper mapper, IHttpClientFactory httpClientFactory)
         {
             _userManager = userManager;
             _mapper = mapper;
+            _httpClientFactory = httpClientFactory;
         }
 
         [Route("Index")]
         public IActionResult Index()
         {
-            var values = _userManager.Users.ToList();
+            var values = _userManager.Users.Include(x => x.WorkLocation).ToList();
             var map = _mapper.Map<List<UserListDto>>(values);
             return View(map);
         }
         [HttpGet]
         [Route("AddUser")]
-        public IActionResult AddUser()
+        public async Task<IActionResult> AddUser()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5173/api/WorkLocation");
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<WorkLocation>>(jsonData);
+            List<SelectListItem> workLocationList = (from x in values
+                                                     select new SelectListItem
+                                                     {
+                                                         Text = x.WorkLocationName,
+                                                         Value = x.WorkLocationId.ToString()
+                                                     }).ToList();
+            ViewBag.workLocation = workLocationList;
             return View();
         }
         [HttpPost]
@@ -68,14 +82,30 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateUser(int id)
         {
             var value = await _userManager.FindByIdAsync(id.ToString());
-            var map = _mapper.Map<UserUpdateDto>(value);
-            return View(map);
+            if (value != null)
+            {
+                var client = _httpClientFactory.CreateClient();
+                var responseMessage = await client.GetAsync("http://localhost:5173/api/WorkLocation");
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<WorkLocation>>(jsonData);
+                List<SelectListItem> workLocationList = (from x in values
+                                                         select new SelectListItem
+                                                         {
+                                                             Text = x.WorkLocationName,
+                                                             Value = x.WorkLocationId.ToString()
+                                                         }).ToList();
+                ViewBag.workLocation = workLocationList;
+                var map = _mapper.Map<UserUpdateDto>(value);
+                return View(map);
+            }
+            return View();
+
         }
         [HttpPost]
         [Route("UpdateUser/{id:int}")]
         public async Task<IActionResult> UpdateUser(UserUpdateDto memberUpdateDto, IFormFile Image)
         {
-           var user = await _userManager.FindByIdAsync(memberUpdateDto.Id.ToString());
+            var user = await _userManager.FindByIdAsync(memberUpdateDto.Id.ToString());
             if (Image != null && Image.Length > 0)
             {
                 var source = Directory.GetCurrentDirectory();
@@ -108,6 +138,7 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             user.About = memberUpdateDto.About;
             user.Email = memberUpdateDto.Email;
             user.Birtday = memberUpdateDto.Birtday;
+            user.WorkLocationId = memberUpdateDto.WorkLocationId;
             user.Profession = memberUpdateDto.Profession;
             user.TwitterUrl = memberUpdateDto.TwitterUrl;
             user.InstagramUrl = memberUpdateDto.InstagramUrl;
