@@ -19,5 +19,6 @@ namespace HotelApiProject.WebUI.Dtos.AppUserDtos
         [Required(ErrorMessage = "Parola tekrar bilgisi boş bırakılamaz.")]
         [Compare("Password", ErrorMessage = "Parolalar birbirleriyle uyuşmuyor.")]
         public string ConfirmPassword { get; set; }
+        public bool Gender { get; set; }
     }
 }

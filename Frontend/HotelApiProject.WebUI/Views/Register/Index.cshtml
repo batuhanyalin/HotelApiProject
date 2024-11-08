@@ -43,11 +43,11 @@
                                 <a class="text-center" href="/Register/Index"> <h4>Yeni Üyelik Oluştur</h4></a>
                                 <form method="post" class="mt-5 mb-5 login-input">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" asp-for=Name placeholder="Ad"/>
+                                        <input type="text" class="form-control" asp-for=Name placeholder="Ad" />
                                         <span class="text-danger" asp-validation-for="Name"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" asp-for=Surname placeholder="Soyad"/>
+                                        <input type="text" class="form-control" asp-for=Surname placeholder="Soyad" />
                                         <span class="text-danger" asp-validation-for="Surname"></span>
                                     </div>
                                     <div class="form-group">
@@ -70,6 +70,28 @@
                                         <input type="text" class="form-control" asp-for=ConfirmPassword placeholder="Parola Doğrulama" />
                                         <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
                                     </div>
+                                    <div class="form-group col">
+                                        <label>Cinsiyet</label>
+                                        <br />
+                                        <div class="row">
+                                            <!-- Erkek Radyo Butonu -->
+                                            <div class="col">
+                                                <input asp-for="Gender" type="radio" class="form-check-input" value="true" id="male" />
+                                                <label for="male">
+                                                    <i style="color:cornflowerblue;font-size:xx-large" class="fas fa-mars"></i> Erkek
+                                                </label>
+                                            </div>
+                                            <!-- Kadın Radyo Butonu -->
+                                            <div class="col">
+                                                <input asp-for="Gender" type="radio" class="form-check-input" value="false" id="female" />
+                                                <label for="female">
+                                                    <i style="color:orchid;font-size:xx-large" class="fas fa-venus"></i> Kadın
+                                                </label>
+                                            </div>
+                                            <span asp-validation-for="Gender"></span>
+                                        </div>
+                                    </div>
+
                                     <button class="btn login-form__btn submit w-100">Kayıt Ol</button>
                                 </form>
                                 <p class="mt-5 login-form__footer">Zaten bir hesabın var mı? <a href="/Login/Index" class="text-primary">Giriş Yap </a></p>

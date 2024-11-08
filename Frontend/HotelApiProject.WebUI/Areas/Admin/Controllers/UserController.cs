@@ -27,7 +27,7 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         [Route("Index")]
         public IActionResult Index()
         {
-            var values = _userManager.Users.Include(x => x.WorkLocation).ToList();
+            var values = _userManager.Users.Include(x => x.WorkLocation).ToList(); // Burada Include kullanıyorum fakat bunun yerine AppUser sınıfı içinde WorkLocation sınıfını public virtual olarak da tanımlarsam aynı işlevi görüyor. *-*
             var map = _mapper.Map<List<UserListDto>>(values);
             return View(map);
         }
@@ -141,6 +141,7 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             user.WorkLocationId = memberUpdateDto.WorkLocationId;
             user.Profession = memberUpdateDto.Profession;
             user.TwitterUrl = memberUpdateDto.TwitterUrl;
+            user.Gender = memberUpdateDto.Gender;
             user.InstagramUrl = memberUpdateDto.InstagramUrl;
             if (memberUpdateDto.Password != null)
             {

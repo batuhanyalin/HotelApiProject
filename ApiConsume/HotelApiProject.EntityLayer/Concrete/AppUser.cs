@@ -21,5 +21,6 @@ namespace HotelApiProject.EntityLayer.Concrete
         public DateTime RegisterDate { get; set; }
         public int WorkLocationId { get; set; }
         public WorkLocation WorkLocation { get; set; }
+        public bool Gender { get; set; }
     }
 }

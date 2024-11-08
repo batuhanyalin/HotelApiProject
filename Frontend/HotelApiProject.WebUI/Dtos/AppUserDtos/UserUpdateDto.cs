@@ -22,5 +22,6 @@ namespace HotelApiProject.WebUI.Dtos.AppUserDtos
         public DateTime Birtday { get; set; }
         public DateTime RegisterDate { get; set; }
         public IFormFile Image { get; set; }
+        public bool Gender { get; set; }
     }
 }

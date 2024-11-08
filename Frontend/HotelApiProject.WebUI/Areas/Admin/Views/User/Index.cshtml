@@ -40,6 +40,7 @@
                                     <th scope="col">Profil</th>
                                     <th scope="col">Adı</th>
                                     <th scope="col">Soyadı</th>
+                                    <th scope="col">Cinsiyet</th>
                                     <th scope="col">Meslek</th>
                                     <th scope="col">Şehir</th>
                                     <th scope="col">Bulunduğu Şube</th>
@@ -56,6 +57,18 @@
                                         <th><img height="90px" width="80px" src="@item.ImageUrl" /></th>
                                         <td>@item.Name</td>
                                         <td>@item.Surname</td>
+                                        <td>
+                                            @{
+                                                if (item.Gender == true)
+                                                {
+                                                    <span><i style="color:cornflowerblue;font-size:xx-large" class="fas fa-mars"></i></span>
+                                                }
+                                                else
+                                                {
+                                                    <span><i style="color:orchid;font-size:xx-large" class="fas fa-venus"></i></span>
+                                                }
+                                            }
+                                        </td>
                                         <td>@item.Profession</td>
                                         <td>@item.City</td>
                                         <td>@item.WorkLocation.WorkLocationName - @item.WorkLocation.WorkLocationCity</td>

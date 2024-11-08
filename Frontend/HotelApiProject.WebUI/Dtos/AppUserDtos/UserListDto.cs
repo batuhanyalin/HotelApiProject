@@ -20,5 +20,6 @@ namespace HotelApiProject.WebUI.Dtos.AppUserDtos
         public int WorkLocationId { get; set; }
         public WorkLocation WorkLocation { get; set; }
         public DateTime Birtday { get; set; }
+        public bool Gender { get; set; }
     }
 }
