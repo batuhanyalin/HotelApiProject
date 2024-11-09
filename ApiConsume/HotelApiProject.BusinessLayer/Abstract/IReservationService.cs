@@ -9,5 +9,6 @@ namespace HotelApiProject.BusinessLayer.Abstract
 {
     public interface IReservationService:IGenericService<Reservation>
     {
+        public int TGetReservationCount();
     }
 }

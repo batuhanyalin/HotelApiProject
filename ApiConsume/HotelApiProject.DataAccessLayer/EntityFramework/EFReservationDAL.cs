@@ -18,5 +18,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
         {
             _context = context;
         }
+        public int GetReservationCount()
+        {
+            var count = _context.Reservations.Count();
+            return count;
+        }
     }
 }

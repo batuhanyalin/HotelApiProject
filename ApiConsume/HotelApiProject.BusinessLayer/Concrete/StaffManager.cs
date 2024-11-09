@@ -38,6 +38,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
             _StaffDAL.Insert(t);
         }
 
+        public int TStaffCount()
+        {
+           return _StaffDAL.StaffCount();
+        }
+
         public void TUpdate(Staff t)
         {
             _StaffDAL.Update(t);

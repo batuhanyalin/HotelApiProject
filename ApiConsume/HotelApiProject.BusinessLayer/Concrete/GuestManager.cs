@@ -33,6 +33,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
            return _GuestDAL.GetList();
         }
 
+        public int TGetGuestCount()
+        {
+            return _GuestDAL.GetGuestCount();
+        }
+
         public void TInsert(Guest t)
         {
             _GuestDAL.Insert(t);

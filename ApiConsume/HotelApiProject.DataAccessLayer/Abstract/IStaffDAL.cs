@@ -9,5 +9,6 @@ namespace HotelApiProject.DataAccessLayer.Abstract
 {
     public interface IStaffDAL:IGenericDAL<Staff>
     {
+        public int StaffCount();
     }
 }
