@@ -10,5 +10,6 @@ namespace HotelApiProject.EntityLayer.Concrete
     {
         public int ReservationStatusId { get; set; }
         public string StatusName { get; set; }
+        public List<Reservation>? Reservations { get; set; }
     }
 }

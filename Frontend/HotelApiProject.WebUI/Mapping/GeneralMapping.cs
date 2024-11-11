@@ -13,6 +13,7 @@ using HotelApiProject.WebUI.Dtos.ReservationDtos;
 using HotelApiProject.WebUI.Dtos.GuestDtos;
 using HotelApiProject.WebUI.Dtos.MessageCategoryDtos;
 using HotelApiProject.WebUI.Dtos.WorkLocationDtos;
+using HotelApiProject.WebUI.Dtos.ReservationStatusDtos;
 
 namespace HotelApiProject.WebUI.Mapping
 {
@@ -75,6 +76,10 @@ namespace HotelApiProject.WebUI.Mapping
             CreateMap<Reservation, ReservationAddDto>().ReverseMap();
             CreateMap<Reservation, ReservationListDto>().ReverseMap();
             CreateMap<Reservation, ReservationUpdateDto>().ReverseMap();
+
+            CreateMap<ReservationStatus, ReservationStatusUpdateDto>().ReverseMap();
+            CreateMap<ReservationStatus, ReservationStatusAddDto>().ReverseMap();
+            CreateMap<ReservationStatus, ReservationStatusListDto>().ReverseMap();
         }
     }
 }

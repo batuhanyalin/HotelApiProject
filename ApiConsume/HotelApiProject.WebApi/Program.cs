@@ -44,6 +44,9 @@ builder.Services.AddScoped<IMessageCategoryDAL, EFMessageCategoryDAL>();
 builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
 builder.Services.AddScoped<IWorkLocationDAL, EFWorkLocationDAL>();
 
+builder.Services.AddScoped<IReservationStatusService, ReservationStatusManager>();
+builder.Services.AddScoped<IReservationStatusDAL, EFReservationStatusDAL>();
+
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 
 

@@ -26,6 +26,7 @@ namespace HotelApiProject.WebUI.Dtos.ReservationDtos
         public int RoomCount { get; set; }
         public string? Request { get; set; }
         public string? Description { get; set; }
-        public string ReservationStatus { get; set; }
+        public int ReservationStatusId { get; set; }
+        public ReservationStatus ReservationStatus { get; set; }
     }
 }

@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelApiProject.DataAccessLayer.Abstract
 {
-    public interface IReservationDAL:IGenericDAL<Reservation>
+    public interface IReservationStatusDAL:IGenericDAL<ReservationStatus>
     {
-        public int GetReservationCount();
-        public List<Reservation> GetReservationLast6();
-        public List<Reservation> GetListReservationWithStatus();
     }
 }

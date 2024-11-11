@@ -12,11 +12,11 @@ namespace HotelApiProject.WebUI.Areas.Admin.ViewComponents
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://twitter32.p.rapidapi.com/getProfile?username=jeandpardaillan"),
+                RequestUri = new Uri("https://twitter-api45.p.rapidapi.com/screenname.php?screenname=jeandpardaillan&rest_id=14457172"),
                 Headers =
     {
         { "x-rapidapi-key", "87ebda1640msh1f0710fdc6ebb78p11788djsnc07507e0fe79" },
-        { "x-rapidapi-host", "twitter32.p.rapidapi.com" },
+        { "x-rapidapi-host", "twitter-api45.p.rapidapi.com" },
     },
             };
             using (var response = await client.SendAsync(request))

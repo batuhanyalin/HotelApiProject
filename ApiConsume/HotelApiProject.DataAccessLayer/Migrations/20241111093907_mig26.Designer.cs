@@ -4,6 +4,7 @@ using HotelApiProject.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelApiProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20241111093907_mig26")]
+    partial class mig26
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -336,6 +338,10 @@ namespace HotelApiProject.DataAccessLayer.Migrations
 
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ReservationStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ReservationStatusId")
                         .HasColumnType("int");
@@ -755,13 +761,13 @@ namespace HotelApiProject.DataAccessLayer.Migrations
 
             modelBuilder.Entity("HotelApiProject.EntityLayer.Concrete.Reservation", b =>
                 {
-                    b.HasOne("HotelApiProject.EntityLayer.Concrete.ReservationStatus", "ReservationStatus")
+                    b.HasOne("HotelApiProject.EntityLayer.Concrete.ReservationStatus", "ReservationStatusx")
                         .WithMany("Reservations")
                         .HasForeignKey("ReservationStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ReservationStatus");
+                    b.Navigation("ReservationStatusx");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

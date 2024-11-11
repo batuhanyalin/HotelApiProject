@@ -62,8 +62,8 @@
                                 </div>
                                 <div class="form-group col">
                                     <label>Rezervasyon Durum</label>
-                                    <input type="text" class="form-control" asp-for="ReservationStatus" />
-                                    <span class="text-danger" asp-validation-for=ReservationStatus></span>
+                                    @Html.DropDownListFor(x => x.ReservationStatusId, (List<SelectListItem>)ViewBag.statusList, new { @class = "form-control" })
+                                    <span class="text-danger" asp-validation-for=ReservationStatusId></span>
                                 </div>
                             </div>
                             <div class="form-row">

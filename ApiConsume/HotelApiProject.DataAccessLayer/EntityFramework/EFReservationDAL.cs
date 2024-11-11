@@ -2,6 +2,7 @@
 using HotelApiProject.DataAccessLayer.Concrete;
 using HotelApiProject.DataAccessLayer.Repositories;
 using HotelApiProject.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,12 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
         }
         public List<Reservation> GetReservationLast6()
         {
-            var values= _context.Reservations.Take(6).OrderByDescending(x=>x.ReservationId).ToList();
+            var values = _context.Reservations.Take(6).OrderByDescending(x => x.ReservationId).Include(x=>x.ReservationStatus).ToList();
+            return values;
+        }
+        public List<Reservation> GetListReservationWithStatus()
+        {
+            var values= _context.Reservations.Include(x=>x.ReservationStatus).ToList();
             return values;
         }
     }

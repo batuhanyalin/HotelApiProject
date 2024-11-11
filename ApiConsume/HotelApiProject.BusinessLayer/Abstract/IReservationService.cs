@@ -11,5 +11,6 @@ namespace HotelApiProject.BusinessLayer.Abstract
     {
         public int TGetReservationCount();
         public List<Reservation> TGetReservationLast6();
+        public List<Reservation> TGetListReservationWithStatus();
     }
 }

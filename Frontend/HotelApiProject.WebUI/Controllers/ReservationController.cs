@@ -30,7 +30,7 @@ namespace HotelApiProject.WebUI.Controllers
         {
             dto.ReservationDate = DateTime.Now;
             dto.Description = "Açıklama girilecek.";
-            dto.ReservationStatus = "Onay Bekliyor.";
+            dto.ReservationStatusId = 3;
             var client = _httpClientFactory.CreateClient();
             var map = _mapper.Map<Reservation>(dto);
             var jsonData = JsonConvert.SerializeObject(map);
