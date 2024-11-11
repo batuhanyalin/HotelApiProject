@@ -7,7 +7,7 @@ namespace RapidApiConsume.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            List<ApiMovieViewModel> list = new List<ApiMovieViewModel>();
+            List<InstagramFollowersDto> list = new List<ApiMovieViewModel>();
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {

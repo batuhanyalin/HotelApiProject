@@ -10,5 +10,6 @@ namespace HotelApiProject.BusinessLayer.Abstract
     public interface IStaffService:IGenericService<Staff>
     {
         public int TStaffCount();
+        public List<Staff> TGetStaffLast4();
     }
 }

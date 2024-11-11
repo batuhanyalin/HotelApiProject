@@ -21,6 +21,12 @@ namespace HotelApiProject.WebApi.Controllers
             var value = _ReservationService.TGetList();
             return Ok(value);
         }
+        [HttpGet("GetReservationLast6")]
+        public IActionResult GetReservationLast6()
+        {
+            var value = _ReservationService.TGetReservationLast6();
+            return Ok(value);
+        }
         [HttpGet("{id}")]
         public IActionResult GetReservation(int id)
         {

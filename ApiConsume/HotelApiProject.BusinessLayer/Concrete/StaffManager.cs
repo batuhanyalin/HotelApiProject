@@ -33,6 +33,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
            return _StaffDAL.GetList();
         }
 
+        public List<Staff> TGetStaffLast4()
+        {
+            return _StaffDAL.GetStaffLast4();
+        }
+
         public void TInsert(Staff t)
         {
             _StaffDAL.Insert(t);

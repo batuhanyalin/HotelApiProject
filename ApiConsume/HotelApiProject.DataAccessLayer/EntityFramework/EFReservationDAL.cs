@@ -23,5 +23,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
             var count = _context.Reservations.Count();
             return count;
         }
+        public List<Reservation> GetReservationLast6()
+        {
+            var values= _context.Reservations.Take(6).OrderByDescending(x=>x.ReservationId).ToList();
+            return values;
+        }
     }
 }

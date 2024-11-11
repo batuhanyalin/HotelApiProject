@@ -1,125 +1,66 @@
-﻿<div class="row">
+﻿@model List<ReservationListDto>
+@{
+    int count = 0;
+}
+<div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <div class="active-member">
                     <div class="table-responsive">
+                        <h4>Rezervasyon Listesi</h4>
                         <table class="table table-xs mb-0">
                             <thead>
                                 <tr>
-                                    <th>Customers</th>
-                                    <th>Product</th>
-                                    <th>Country</th>
-                                    <th>Status</th>
-                                    <th>Payment Method</th>
-                                    <th>Activity</th>
+                                    <th>#</th>
+                                    <th>Adı</th>
+                                    <th>Soyadı</th>
+                                    <th>Telefon</th>
+                                    <th>Rezervasyon Tarihi</th>
+                                    <th>CheckIn</th>
+                                    <th>CheckOut</th>
+                                    <th>Durum</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
-                                    <td>iPhone X</td>
-                                    <td>
-                                        <span>United States</span>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">10 sec ago</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/2.jpg" class=" rounded-circle mr-3" alt="">Walter R.</td>
-                                    <td>Pixel 2</td>
-                                    <td><span>Canada</span></td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">50 sec ago</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/3.jpg" class=" rounded-circle mr-3" alt="">Andrew D.</td>
-                                    <td>OnePlus</td>
-                                    <td><span>Germany</span></td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-warning  mr-2"></i> Pending</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">10 sec ago</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/6.jpg" class=" rounded-circle mr-3" alt=""> Megan S.</td>
-                                    <td>Galaxy</td>
-                                    <td><span>Japan</span></td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">10 sec ago</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/4.jpg" class=" rounded-circle mr-3" alt=""> Doris R.</td>
-                                    <td>Moto Z2</td>
-                                    <td><span>England</span></td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-success" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Paid</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">10 sec ago</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="~/adminweb/images/avatar/5.jpg" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
-                                    <td>Notebook Asus</td>
-                                    <td><span>China</span></td>
-                                    <td>
-                                        <div>
-                                            <div class="progress" style="height: 6px">
-                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><i class="fa fa-circle-o text-warning  mr-2"></i> Pending</td>
-                                    <td>
-                                        <span>Last Login</span>
-                                        <span class="m-0 pl-3">10 sec ago</span>
-                                    </td>
-                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.ReservationDate.ToString("dd.MMM.yyy")</td>
+                                        <td>@item.CheckIn.ToString("dd.MMM.yyy")</td>
+                                        <td>@item.CheckOut.ToString("dd.MMM.yyy")</td>                                  
+                                        <td>
+                                            @{
+                                                if (item.ReservationStatus == "Onaylandı")
+                                                {
+                                                    <span class="label gradient-1 rounded">@item.ReservationStatus</span>
+                                                }
+                                                else if (item.ReservationStatus == "Onaylanmadı")
+                                                {
+                                                    <span class="label gradient-2 rounded">@item.ReservationStatus</span>
+                                                }
+                                                else if (item.ReservationStatus == "Onay Bekliyor")
+                                                {
+                                                    <span class="label gradient-3 rounded">@item.ReservationStatus</span>
+                                                }
+                                                else if (item.ReservationStatus == "İptal Edildi")
+                                                {
+                                                    <span class="text-dark label gradient-8 rounded">@item.ReservationStatus</span>
+                                                }
+                                                else if (item.ReservationStatus == "Geçmiş Rezervasyon")
+                                                {
+                                                    <span class="label gradient-7 rounded">@item.ReservationStatus</span>
+                                                }
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>

@@ -38,6 +38,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
            return _ReservationDAL.GetReservationCount();
         }
 
+        public List<Reservation> TGetReservationLast6()
+        {
+            return _ReservationDAL.GetReservationLast6();
+        }
+
         public void TInsert(Reservation t)
         {
             _ReservationDAL.Insert(t);

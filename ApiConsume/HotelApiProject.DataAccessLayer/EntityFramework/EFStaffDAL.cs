@@ -23,5 +23,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
             var count= _context.Staffs.Count();
             return count;
         }
+        public List<Staff> GetStaffLast4()
+        {
+            var values= _context.Staffs.Take(4).OrderByDescending(x=>x.StaffId).ToList();
+            return values;
+        }
     }
 }

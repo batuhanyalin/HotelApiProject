@@ -10,5 +10,6 @@ namespace HotelApiProject.DataAccessLayer.Abstract
     public interface IReservationDAL:IGenericDAL<Reservation>
     {
         public int GetReservationCount();
+        public List<Reservation> GetReservationLast6();
     }
 }
