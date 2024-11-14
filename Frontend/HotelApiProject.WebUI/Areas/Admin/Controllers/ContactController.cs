@@ -24,11 +24,12 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> SentMessageList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5173/api/SendMessage");
+            var responseMessage = await client.GetAsync("http://localhost:5173/api/Contact/GetNewMessageForNavbar");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<SendMessageListDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<Contact>>(jsonData);
+                var map = _mapper.Map<List<ContactListDto>>(values);
                 return View(values);
             }
             return View();

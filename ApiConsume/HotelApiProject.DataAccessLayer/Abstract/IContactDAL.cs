@@ -11,5 +11,6 @@ namespace HotelApiProject.DataAccessLayer.Abstract
     {
         public int GetContactCount();
         public List<Contact> GetListContact();
+        public List<Contact> GetNewMessageForNavbar();
     }
 }

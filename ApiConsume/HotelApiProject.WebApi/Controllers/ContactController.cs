@@ -21,7 +21,13 @@ namespace HotelApiProject.WebApi.Controllers
         {
             var value = _ContactService.TGetList();
             return Ok(value);
-        }       
+        }
+        [HttpGet("GetNewMessageForNavbar")]
+        public IActionResult GetNewMessageForNavbar()
+        {
+            var value = _ContactService.TGetNewMessageForNavbar();
+            return Ok(value);
+        }
         [HttpGet("GetListContact")]
         public IActionResult GetListContact()
         {

@@ -11,5 +11,6 @@ namespace HotelApiProject.BusinessLayer.Abstract
     {
         public int TGetContactCount();
         public List<Contact> TGetListContact();
+        public List<Contact> TGetNewMessageForNavbar();
     }
 }

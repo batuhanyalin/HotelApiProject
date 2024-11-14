@@ -29,5 +29,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
             var values= _context.Contacts.Include(x=>x.MessageCategory).ToList();
             return values;
         }
+        public List<Contact> GetNewMessageForNavbar()
+        {
+            var values = _context.Contacts.Where(x=>x.IsApproved==false).Include(x => x.MessageCategory).Take(3).ToList();
+            return values;
+        }
     }
 }
