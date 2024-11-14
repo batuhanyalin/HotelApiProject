@@ -1,6 +1,6 @@
 ﻿@model List<UserListDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "UserListByRole";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
@@ -9,7 +9,7 @@
 <div class="row page-titles mx-0">
     <div class="col p-md-0">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/Admin/Dashboard/Index">Anasayfa</a></li>
+            <li class="breadcrumb-item"><a href="/Admin/Role/Index">Roller</a></li>
             <li class="breadcrumb-item active"><a href="javascript:void(0)">Kullanıcılar</a></li>
         </ol>
     </div>
@@ -23,12 +23,12 @@
                     <div class="row">
                         <div class="col-lg-10">
                             <h4 class="card-title">
-                                Kullanıcı Listesi
+                                @ViewBag.role Rolündeki Kullanıcı Listesi
                             </h4>
                         </div>
                         <div class="col-lg-2">
                             <a href="/Admin/User/AddUser" class="btn mb-1 btn-primary">
-                                Yeni Kullanıcı  <span class="btn-icon-right"><i style="font-size:medium" class="fas fa-user"></i> +</span>
+                                Yeni Kullanıcı <span class="btn-icon-right"><i class="fas fa-user-plus"></i></span>
                             </a>
                         </div>
                     </div>
@@ -43,7 +43,6 @@
                                     <th scope="col">Cinsiyet</th>
                                     <th scope="col">Meslek</th>
                                     <th scope="col">Şehir</th>
-                                    <th scope="col">Bulunduğu Şube</th>
                                     <th scope="col">E-posta</th>
                                     <th scope="col">Aksiyon</th>
                                 </tr>
@@ -71,7 +70,6 @@
                                         </td>
                                         <td>@item.Profession</td>
                                         <td>@item.City</td>
-                                        <td>@item.WorkLocation.WorkLocationName - @item.WorkLocation.WorkLocationCity</td>
                                         <td>@item.Email</td>
                                         <td>
                                             <span><a href="/Admin/User/UpdateUser/@item.Id" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/Admin/User/DeleteUser/@item.Id" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger"></i></a></span>
@@ -86,5 +84,4 @@
         </div>
     </div>
 </div>
-
 

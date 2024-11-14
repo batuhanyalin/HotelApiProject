@@ -14,14 +14,16 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
     [Route("Admin/[controller]")]
     public class UserController : Controller
     {
+        private readonly RoleManager<AppRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IMapper _mapper;
-        public UserController(UserManager<AppUser> userManager, IMapper mapper, IHttpClientFactory httpClientFactory)
+        public UserController(UserManager<AppUser> userManager, IMapper mapper, IHttpClientFactory httpClientFactory, RoleManager<AppRole> roleManager)
         {
             _userManager = userManager;
             _mapper = mapper;
             _httpClientFactory = httpClientFactory;
+            _roleManager = roleManager;
         }
 
         [Route("Index")]
@@ -35,6 +37,15 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         [Route("AddUser")]
         public async Task<IActionResult> AddUser()
         {
+            var roles= _roleManager.Roles.ToList();
+            List<SelectListItem> list= (from x in roles
+                                        select new SelectListItem
+                                        {
+                                            Text = x.Name,
+                                            Value=x.Id.ToString()
+                                        }).ToList();
+            ViewBag.roleList = list;
+
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5173/api/WorkLocation");
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -68,6 +79,13 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             {
                 map.ImageUrl = $"/images/users/no-image-users.png";
             }
+
+
+            //Rol ekleme işlemi--
+            var newRole = _roleManager.Roles.FirstOrDefault(x => x.Id == dto.UserRole.Id);
+            await _userManager.AddToRoleAsync(map, newRole.Name);
+            //Rol ekleme işlemi--
+
             map.InstagramUrl = $"https://instagram.com/{map.InstagramUrl}";
             map.TwitterUrl = $"https://x.com/{map.TwitterUrl}";
             var result = await _userManager.CreateAsync(map, dto.Password);
@@ -84,6 +102,17 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             var value = await _userManager.FindByIdAsync(id.ToString());
             if (value != null)
             {
+                var currentRole= await _userManager.GetRolesAsync(value);
+                var roles = _roleManager.Roles.ToList();
+                List<SelectListItem> roleList = (from x in roles
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.Name,
+                                                     Value = x.Id.ToString(),
+                                                     Selected= currentRole.Contains(x.Name)
+                                                 }).ToList();
+                ViewBag.roleList = roleList;
+
                 var client = _httpClientFactory.CreateClient();
                 var responseMessage = await client.GetAsync("http://localhost:5173/api/WorkLocation");
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -125,12 +154,12 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             }
 
 
-            ////Rol değiştirme işlemi--
-            //var currentRole = await _userManager.GetRolesAsync(user);
-            //var newRole = _roleManager.Roles.FirstOrDefault(x => x.Id == memberUpdateDto.UserRole.Id);
-            //await _userManager.RemoveFromRolesAsync(user, currentRole);
-            //await _userManager.AddToRoleAsync(user, newRole.Name);
-            ////Rol değiştirme işlemi--
+            //Rol değiştirme işlemi--
+            var currentRole = await _userManager.GetRolesAsync(user);
+            var newRole = _roleManager.Roles.FirstOrDefault(x => x.Id == memberUpdateDto.UserRole.Id);
+            await _userManager.RemoveFromRolesAsync(user, currentRole);
+            await _userManager.AddToRoleAsync(user, newRole.Name);
+            //Rol değiştirme işlemi--
 
             user.Name = memberUpdateDto.Name;
             user.Surname = memberUpdateDto.Surname;

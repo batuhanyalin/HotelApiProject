@@ -22,5 +22,11 @@ namespace HotelApiProject.WebUI.Dtos.AppUserDtos
         public DateTime RegisterDate { get; set; }
         public IFormFile Image { get; set; }
         public bool Gender { get; set; }
+        public RoleAdd UserRole { get; set; }
+    }
+    public class RoleAdd
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
