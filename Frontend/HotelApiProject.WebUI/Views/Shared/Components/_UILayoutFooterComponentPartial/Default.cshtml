@@ -14,7 +14,7 @@
                 <h6 class="section-title text-start text-primary text-uppercase mb-4">İletişim Kur</h6>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Kundu Mah. No: 450, 07112 Aksu/Antalya</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+903456877889">+90345 687 78 89</a></p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:hotelapi@batuhanyalin.com.tr">hotelapi@batuhanyalin.com.tr</a></p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:hotelapi@batuhanyalinsoftware.com.tr">hotelapi@batuhanyalin.com.tr</a></p>
                 <div class="d-flex pt-2">
                     @foreach (var item in Model)
                     {
@@ -28,9 +28,18 @@
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Linkler</h6>
                         <a class="btn btn-link" href="/Default/Index">Hakkımızda</a>
                         <a class="btn btn-link" href="/Contact/Index">İletişim</a>
-                        <a class="btn btn-link" href="">Gizlilik Politikası</a>
-                        <a class="btn btn-link" href="">Şartlar & Koşullar</a>
-                        <a class="btn btn-link" href="/Default/Help">Destek</a>
+                        <a class="btn btn-link" href="">Politikalar | Şartlar & Koşullar</a>
+                        @{
+                            if (User.Identity.Name==null)
+                            {
+                                <a class="btn btn-link" href="/Login/Index">Giriş Yap</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-link" href="/Admin/Profile/Index">Profilim</a>
+                                <a class="btn btn-link" href="/Login/LogOut">Çıkış Yap</a>
+                            }
+                        }
                     </div>
                     <div class="col-md-6">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Servisler</h6>

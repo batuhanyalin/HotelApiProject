@@ -17,7 +17,7 @@
                         <a href="tel:+903456789" class="mb-0">+90 345 67 89</a>
                     </div>
                 </div>
-                @await Component.InvokeAsync("_UILayoutNavbarSocialMediaComponentPartial")  
+                @await Component.InvokeAsync("_UILayoutNavbarSocialMediaComponentPartial")
             </div>
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
                 <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -42,9 +42,27 @@
                         <a href="/Contact/Index" class="nav-item nav-link">İletişim</a>
                         <a href="/Default/Help" class="nav-item nav-link">Yardım</a>
                         <a href="/Reservation/Index" style="font-size:large" class="nav-item nav-link text-primary">Rezervasyon</a>
+                        @{
+                            if (User.Identity.Name == null)
+                            {
+                                <a style="font-size:large" class="nav-item nav-link" title="Oturum Aç" href="/Login/Index">
+                                    <i class="fas fa-sign-in-alt default-icon"></i>
+                                    <i class="fas fa-running hover-icon"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a style="font-size:large" class="nav-item nav-link" title="Profilim" href="/Login/Index">
+                                    <i class="fas fa-user-circle default-icon"></i>
+                                    <i class="fas fa-child hover-icon"></i>
+                                </a>
+                            }
+                        }
+
                     </div>
                 </div>
             </nav>
         </div>
     </div>
 </div>
+<link href="~/css/site.css" rel="stylesheet" />
