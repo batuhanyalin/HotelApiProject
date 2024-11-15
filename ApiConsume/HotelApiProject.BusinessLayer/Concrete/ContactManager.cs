@@ -43,6 +43,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
            return _ContactDAL.GetListContact(); 
         }
 
+        public List<Contact> TGetMessageByCategory(int id)
+        {
+            return _ContactDAL.GetMessageByCategory(id);
+        }
+
         public List<Contact> TGetNewMessageForNavbar()
         {
             return _ContactDAL.GetNewMessageForNavbar();

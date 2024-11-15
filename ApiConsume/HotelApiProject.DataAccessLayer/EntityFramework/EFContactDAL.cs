@@ -34,5 +34,10 @@ namespace HotelApiProject.DataAccessLayer.EntityFramework
             var values = _context.Contacts.Where(x=>x.IsApproved==false).Include(x => x.MessageCategory).Take(3).ToList();
             return values;
         }
+        public List<Contact> GetMessageByCategory(int id)
+        {
+            var values = _context.Contacts.Where(x => x.MessageCategoryId==id).Include(x => x.MessageCategory).ToList();
+            return values;
+        }
     }
 }

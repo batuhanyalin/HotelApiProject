@@ -15,6 +15,7 @@ using HotelApiProject.WebUI.Dtos.MessageCategoryDtos;
 using HotelApiProject.WebUI.Dtos.WorkLocationDtos;
 using HotelApiProject.WebUI.Dtos.ReservationStatusDtos;
 using HotelApiProject.WebUI.Dtos.AppRoleDtos;
+using HotelApiProject.WebUI.Dtos.SendMessageDtos;
 
 namespace HotelApiProject.WebUI.Mapping
 {
@@ -69,6 +70,10 @@ namespace HotelApiProject.WebUI.Mapping
 
             CreateMap<Contact, ContactAddDto>().ReverseMap();
             CreateMap<Contact, ContactListDto>().ReverseMap();
+
+            CreateMap<SendMessage, SendMessageListDto>().ReverseMap();
+            CreateMap<SendMessage, SendMessageAddDto>().ReverseMap();
+            CreateMap<SendMessage, SendMessageUpdateDto>().ReverseMap();
 
 
             CreateMap<AppUser, RegisterDto>().ReverseMap();

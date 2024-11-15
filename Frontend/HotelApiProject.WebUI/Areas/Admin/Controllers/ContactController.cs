@@ -24,13 +24,13 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> SentMessageList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5173/api/Contact/GetNewMessageForNavbar");
+            var responseMessage = await client.GetAsync("http://localhost:5173/api/SendMessage");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<Contact>>(jsonData);
-                var map = _mapper.Map<List<ContactListDto>>(values);
-                return View(values);
+                var values = JsonConvert.DeserializeObject<List<SendMessage>>(jsonData);
+                var map = _mapper.Map<List<SendMessageListDto>>(values);
+                return View(map);
             }
             return View();
         }
@@ -44,7 +44,21 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<Contact>>(jsonData);
-                var map= _mapper.Map<List<ContactListDto>>(values);
+                var map = _mapper.Map<List<ContactListDto>>(values);
+                return View(map);
+            }
+            return View();
+        }
+        [Route("MessageListByCategory/{id:int}")]
+        public async Task<IActionResult> MessageListByCategory(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5173/api/Contact/GetMessageByCategory/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<Contact>>(jsonData);
+                var map = _mapper.Map<List<ContactListDto>>(values);
                 return View(map);
             }
             return View();

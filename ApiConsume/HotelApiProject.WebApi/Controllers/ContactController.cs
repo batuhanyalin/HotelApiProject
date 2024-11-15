@@ -22,6 +22,12 @@ namespace HotelApiProject.WebApi.Controllers
             var value = _ContactService.TGetList();
             return Ok(value);
         }
+        [HttpGet("GetMessageByCategory/{id}")]
+        public IActionResult GetMessageByCategory(int id)
+        {
+            var value = _ContactService.TGetMessageByCategory(id);
+            return Ok(value);
+        }
         [HttpGet("GetNewMessageForNavbar")]
         public IActionResult GetNewMessageForNavbar()
         {
