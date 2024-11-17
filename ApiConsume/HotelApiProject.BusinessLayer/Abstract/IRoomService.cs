@@ -10,5 +10,6 @@ namespace HotelApiProject.BusinessLayer.Abstract
     public interface IRoomService:IGenericService<Room>
     {
         public int TGetRoomCount();
+        public Room TGetRoomDetail(int id);
     }
 }

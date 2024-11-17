@@ -10,5 +10,6 @@ namespace HotelApiProject.DataAccessLayer.Abstract
     public interface IRoomDAL:IGenericDAL<Room>
     {
         public int GetRoomCount();
+        public Room GetRoomDetail(int id);
     }
 }

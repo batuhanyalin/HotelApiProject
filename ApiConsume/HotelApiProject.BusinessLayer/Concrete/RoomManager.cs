@@ -38,6 +38,11 @@ namespace HotelApiProject.BusinessLayer.Concrete
             return _RoomDAL.GetRoomCount();
         }
 
+        public Room TGetRoomDetail(int id)
+        {
+            return _RoomDAL.GetRoomDetail(id);
+        }
+
         public void TInsert(Room t)
         {
             _RoomDAL.Insert(t);

@@ -71,16 +71,21 @@ namespace HotelApiProject.WebUI.Controllers
         {
             return View();
         }
-        public IActionResult RoomDetail()
+        public async Task<IActionResult> RoomDetail(int id)
         {
-            return View();
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5173/api/Room/{id}");
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var value = JsonConvert.DeserializeObject<RoomListDto>(jsonData);
+            ViewBag.Id = id;
+            return View(value);
         }
         [HttpPost]
         public async Task<IActionResult> _SubscribePartial(SubscribeAddDto dto)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index",dto);
+                return View("Index", dto);
             }
             var client = _httpClientFactory.CreateClient();
             var map = _mapper.Map<Subscribe>(dto);
@@ -91,7 +96,7 @@ namespace HotelApiProject.WebUI.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View("Index",dto);
+            return View("Index", dto);
         }
     }
 }
