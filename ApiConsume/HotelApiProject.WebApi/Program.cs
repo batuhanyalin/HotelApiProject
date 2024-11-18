@@ -47,6 +47,9 @@ builder.Services.AddScoped<IWorkLocationDAL, EFWorkLocationDAL>();
 builder.Services.AddScoped<IReservationStatusService, ReservationStatusManager>();
 builder.Services.AddScoped<IReservationStatusDAL, EFReservationStatusDAL>();
 
+builder.Services.AddScoped<ICommentService, CommentManager>();
+builder.Services.AddScoped<ICommentDAL, EFCommentDAL>();
+
 builder.Services.AddAutoMapper(typeof(Program)); //Automapper
 
 

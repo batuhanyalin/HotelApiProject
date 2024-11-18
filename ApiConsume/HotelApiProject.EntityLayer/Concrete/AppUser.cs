@@ -22,5 +22,6 @@ namespace HotelApiProject.EntityLayer.Concrete
         public int WorkLocationId { get; set; }
         public WorkLocation WorkLocation { get; set; }
         public bool Gender { get; set; }
+        public List<Comment>? Comments { get; set; }
     }
 }

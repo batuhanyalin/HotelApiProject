@@ -17,5 +17,6 @@ namespace HotelApiProject.EntityLayer.Concrete
         public int BathCount { get; set; }
         public bool Wifi { get; set; }
         public string Description { get; set; }
+        public List<Comment>? Comments { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HotelApiProject.EntityLayer.Concrete;
+using HotelApiProject.WebUI.Dtos.CommentDtos;
 using HotelApiProject.WebUI.Dtos.RoomDtos;
 using HotelApiProject.WebUI.Dtos.StaffDtos;
 using HotelApiProject.WebUI.Dtos.SubscribeDtos;
@@ -73,12 +74,8 @@ namespace HotelApiProject.WebUI.Controllers
         }
         public async Task<IActionResult> RoomDetail(int id)
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:5173/api/Room/{id}");
-            var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var value = JsonConvert.DeserializeObject<RoomListDto>(jsonData);
             ViewBag.Id = id;
-            return View(value);
+            return View();
         }
         [HttpPost]
         public async Task<IActionResult> _SubscribePartial(SubscribeAddDto dto)
@@ -97,6 +94,23 @@ namespace HotelApiProject.WebUI.Controllers
                 return RedirectToAction("Index");
             }
             return View("Index", dto);
+        }
+        [HttpPost]
+        public async Task<IActionResult> MakeComment(CommentAddDto dto)
+        {
+
+
+            var client = _httpClientFactory.CreateClient();
+            var map = _mapper.Map<Comment>(dto);
+            var jsonData = JsonConvert.SerializeObject(map);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:5173/api/Comment", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("RoomDetail", "Default", new { id = dto.RoomId });
+            }
+            else { return RedirectToAction("Index"); }
+
         }
     }
 }
