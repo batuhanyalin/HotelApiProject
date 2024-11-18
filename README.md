@@ -11,7 +11,7 @@ Murat YÜCEDAĞ' ın udemyde sunduğu 202 Ders 24 saatlik Asp.Net Core Api - Rap
 ⭐ Bütün Hotelier projesi RESTful API' larla bütün CRUD işlemlerini yapabilir şekilde oluşturuldu.
 ⭐ JWT Token ile süre bazlı token oluşturup POSTMAN ile testleri yapıldı.
 ⭐ Proje Admin adlı bir Area vardır ve ana ekrandan ayrılmaktadır. 
-🌟 Bütün proje SOLID prensipleriyle ve folder structure yapısıyla oluşturuldu.
+⭐ Bütün proje SOLID prensipleriyle ve folder structure yapısıyla oluşturuldu.
 ✨ Structural Repository design pattern ile oluşturulmuştur.
 🌟 DbCodeFirst ile MSSQL veritabanı oluşturulup yönetimi sağlandı.
 ✨ MimeKit ve Smtp ile mail gönderme sistemi oluşturuldu.
