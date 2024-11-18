@@ -56,4 +56,8 @@ Murat YÜCEDAĞ' ın udemyde sunduğu 202 Ders 24 saatlik Asp.Net Core Api - Rap
 ####
 ![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/5.png?raw=true)
 ####
+<<<<<<< HEAD
 ![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/6.png?raw=true)
+=======
+![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/6.png?raw=true)
+>>>>>>> abb4a9eda61d3a591545469a80f98b51aee7f6bf
