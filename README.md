@@ -91,4 +91,3 @@
 ![](https://github.com/batuhanyalin/HotelApiProject/blob/master/Frontend/HotelApiProject.WebUI/wwwroot/images/projectScreenshots/testimonialPage.png?raw=true)
 #### İletişim Sayfası
 ![](https://github.com/batuhanyalin/HotelApiProject/blob/master/Frontend/HotelApiProject.WebUI/wwwroot/images/projectScreenshots/contactPage.png?raw=true)
-
