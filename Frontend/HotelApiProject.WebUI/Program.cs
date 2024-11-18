@@ -26,11 +26,11 @@ builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 
 //Proje seviyesinde Authorization uyguluyoruz.
-//builder.Services.AddMvc(config =>
-//{
-//    var policy=new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-//    config.Filters.Add(new AuthorizeFilter(policy));
-//});
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;

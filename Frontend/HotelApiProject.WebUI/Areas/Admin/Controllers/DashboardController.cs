@@ -6,6 +6,8 @@ namespace HotelApiProject.WebUI.Areas.Admin.Controllers
     [Route("Admin/[controller]")]
     public class DashboardController : Controller
     {
+        [HttpGet]
+        [Route("Index")]
         public IActionResult Index()
         {
             return View();
