@@ -34,30 +34,61 @@
 ![Veritabanı](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/database.png?raw=true)
 ### Giriş
 ![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/login.png?raw=true)
-### Onay Bekleyen Kullanıcı
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/onay.png?raw=true)
-### Yetkisiz Giriş
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/error403forbidden.png?raw=true)
-### Sayfa Bulunamadı
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/error404.png?raw=true)
 ### Yeni Üyelik
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/registerValidation.png?raw=true)
-### Parola Sıfırlama
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/forgetPassword.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/register.png?raw=true)
 
-####
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/1.png?raw=true)
-#### 
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/2.png?raw=true)
-#### 
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/3.png?raw=true)
-####
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/4.png?raw=true)
-####
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/5.png?raw=true)
-####
-<<<<<<< HEAD
-![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/6.png?raw=true)
-=======
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/6.png?raw=true)
->>>>>>> abb4a9eda61d3a591545469a80f98b51aee7f6bf
+### Yönetim Paneli
+#### Dashboard
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/dashboard.png?raw=true)
+###### Dashboard
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/dashboardMessageNotification.png?raw=true)
+#### Mesajlar
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/message.png?raw=true)
+###### Mesaja Yanıt
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/answerMessage.png?raw=true)
+###### Mesaj Kategorileri
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/messageCategory.png?raw=true)
+#### Rezervasyonlar
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/reservationList.png?raw=true)
+###### Rezervasyon Güncelleme
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/reservationUpdate.png?raw=true)
+#### Ekip Listesi
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/staffList.png?raw=true)
+###### Ekip Çalışan Güncelleme
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/staffUpdate.png?raw=true)
+#### Kullanıcı Listesi
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/userList.png?raw=true)
+###### Kullanıcı Güncelleme
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/userUpdate.png?raw=true)
+#### Oda Listesi
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/roomList.png?raw=true)
+#### Mail Aboneliği 
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/subscribeList.png?raw=true)
+#### Rol Listesi
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/roleList.png?raw=true)
+#### Hakkında
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/aboutUpdate.png?raw=true)
+#### Dosya Yükleme
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/fileUpload.png?raw=true)
+
+#### Ana Ekran
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/defaultPage.png?raw=true)
+######
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/defaultPage2.png?raw=true)
+######
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/footer.png?raw=true)
+######
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/aboutPage.png?raw=true)
+#### Rezervasyon Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/reservationPage.png?raw=true)
+#### Oda Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/roomPage.png?raw=true)
+#### Hizmet Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/servicePage.png?raw=true)
+#### Ekip Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/staffPage.png?raw=true)
+#### Referans Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/testimonialPage.png?raw=true)
+#### İletişim Sayfası
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/contactPage.png?raw=true)
+
