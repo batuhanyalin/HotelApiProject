@@ -7,27 +7,27 @@ Murat YÜCEDAĞ' ın udemyde sunduğu 202 Ders 24 saatlik Asp.Net Core Api - Rap
 * Yönetici paneli aracılığıyla bütün sistem kontrol edilebilmektedir.
 
 ## 🛠️ Kullanılan Bazı Teknolojiler
-⭐ RapidAPI' den çekilen API' lar consume edildi. Parametreli olarak API' üzerinden consume işlemi yapıldı.
-⭐ Bütün Hotelier projesi RESTful API' larla bütün CRUD işlemlerini yapabilir şekilde oluşturuldu.
-⭐ JWT Token ile süre bazlı token oluşturup POSTMAN ile testleri yapıldı.
-⭐ Proje Admin adlı bir Area vardır ve ana ekrandan ayrılmaktadır. 
-⭐ Bütün proje SOLID prensipleriyle ve folder structure yapısıyla oluşturuldu.
-✨ Structural Repository design pattern ile oluşturulmuştur.
-🌟 DbCodeFirst ile MSSQL veritabanı oluşturulup yönetimi sağlandı.
-✨ MimeKit ve Smtp ile mail gönderme sistemi oluşturuldu.
-🌟 Identity kütüphanesiyle login-logout-role-register sistemi kullanıldı.
-✨ Entity Framework 6.0 Veritabanı etkileşimi ve ORM için kullanıldı.
-🌟 Area sistemiyle paneller birbirinden ayrılıp yönetimi kolaylaştırıldı.
-✨ Projede bol bol iç içe layout ve ViewComponent yapısı kullanıldı.
-🌟 DTO katmanıyla veri yönetimi kolaylaştırıldı.	
-✨ HTML-CSS Bootstrap ile arayüzler tasarlandı.
-🌟 Fluent Validation - kontrol sistemi kullanılarak veirlerin belli kurallara göre alınması sağlandı.
-✨ ViewBaglerle verilerin taşınması.
-🌟 403 - 404 sayfalarının bulunması.
-✨ Proje seviyesinde Authentication - authorize oturum yönetim sistemi oluşturuldu.
-🌟 AutoMapper ile Generic yapıyla DTO katmanıyla entitylerin eşleşmesi sağlandı.
-✨ Login sistemi
-🌟 Linq sorguları
+* 🌟 RapidAPI' den çekilen API' lar consume edildi. Parametreli olarak API' üzerinden consume işlemi yapıldı.
+* ✨ Bütün Hotelier projesi RESTful API' larla bütün CRUD işlemlerini yapabilir şekilde oluşturuldu.
+* 🌟 JWT Token ile süre bazlı token oluşturup POSTMAN ile testleri yapıldı.
+* ✨ Proje Admin adlı bir Area vardır ve ana ekrandan ayrılmaktadır. 
+* 🌟 Bütün proje SOLID prensipleriyle ve folder structure yapısıyla oluşturuldu.
+* ✨ Structural Repository design pattern ile oluşturulmuştur.
+* 🌟 DbCodeFirst ile MSSQL veritabanı oluşturulup yönetimi sağlandı.
+* ✨ MimeKit ve Smtp ile mail gönderme sistemi oluşturuldu.
+* 🌟 Identity kütüphanesiyle login-logout-role-register sistemi kullanıldı.
+* ✨ Entity Framework 6.0 Veritabanı etkileşimi ve ORM için kullanıldı.
+* 🌟 Area sistemiyle paneller birbirinden ayrılıp yönetimi kolaylaştırıldı.
+* ✨ Projede bol bol iç içe layout ve ViewComponent yapısı kullanıldı.
+* 🌟 DTO katmanıyla veri yönetimi kolaylaştırıldı.	
+* ✨ HTML-CSS Bootstrap ile arayüzler tasarlandı.
+* 🌟 Fluent Validation - kontrol sistemi kullanılarak veirlerin belli kurallara göre alınması sağlandı.
+* ✨ ViewBaglerle verilerin taşınması.
+* 🌟 403 - 404 sayfalarının bulunması.
+* ✨ Proje seviyesinde Authentication - authorize oturum yönetim sistemi oluşturuldu.
+* 🌟 AutoMapper ile Generic yapıyla DTO katmanıyla entitylerin eşleşmesi sağlandı.
+* ✨ Login sistemi
+* 🌟 Linq sorguları
 
 
 # Veritabanı
