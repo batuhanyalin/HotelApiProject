@@ -31,29 +31,29 @@ Murat YÜCEDAĞ' ın udemyde sunduğu 202 Ders 24 saatlik Asp.Net Core Api - Rap
 
 
 # Veritabanı
-![Veritabanı](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/database.png?raw=true)
+![Veritabanı](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/database.png?raw=true)
 ### Giriş
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/login.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/login.png?raw=true)
 ### Onay Bekleyen Kullanıcı
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/onay.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/onay.png?raw=true)
 ### Yetkisiz Giriş
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/error403forbidden.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/error403forbidden.png?raw=true)
 ### Sayfa Bulunamadı
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/error404.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/error404.png?raw=true)
 ### Yeni Üyelik
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/registerValidation.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/registerValidation.png?raw=true)
 ### Parola Sıfırlama
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/forgetPassword.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/forgetPassword.png?raw=true)
 
 ####
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/1.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/1.png?raw=true)
 #### 
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/2.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/2.png?raw=true)
 #### 
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/3.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/3.png?raw=true)
 ####
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/4.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/4.png?raw=true)
 ####
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/5.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/5.png?raw=true)
 ####
-![](https://github.com/batuhanyalin/TraversalCoreProject/blob/master/TraversalCoreProject/wwwroot/images/projectScreenshots/6.png?raw=true)
+![](https://github.com/batuhanyalin/HotelApiProject/blob/master/HotelApiProject/wwwroot/images/projectScreenshots/6.png?raw=true)
